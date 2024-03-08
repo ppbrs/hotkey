@@ -1,0 +1,63 @@
+{
+	"folders": [
+		{
+			"path": ".",
+		},
+	],
+	"build_systems": [
+		{
+			"name": "hotkey",
+			"shell_cmd": "${file}",
+			"variants": [
+				{
+					"name": "python3: Run this script locally.",
+					"shell_cmd": "python3 -u ${file}",
+					"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+				},
+				{
+					"name": "python3: Run this script in terminal.",
+					"shell_cmd": "gnome-terminal --full-screen -- bash -c \"python3 -u ${file} & disown; exec bash\"",
+				},
+				{
+					"name": "bash: Make this file executable",
+					"shell_cmd": "chmod +x ${file}",
+				},
+				{
+					"name": "python3: Run pylama on all repo.",
+					"shell_cmd": "cd ${project_path} && pylama -o pylama.ini",
+					"file_regex": "(...*?):([0-9]*):.*",
+				},
+				{
+					"name": "python3: Run pylama on this file.",
+					"shell_cmd": "cd ${project_path} && pylama -o pylama.ini ${file}",
+					// "file_regex": "(...*?):([0-9]*):.*",
+					"file_regex": "(...*?):([0-9]*):([0-9]*)\\s(.*)",
+				},
+				{
+					"name": "Run pytest on all repo.",
+					"shell_cmd": "cd ${project_path} && pytest",
+				},
+				{
+					"name": "python3: Build this package.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "python3 -m build",
+				},
+				{
+					"name": "python3: Install this package as editable.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "python3 -m pip install -e .",
+				},
+				{
+					"name": "python3: Uninstall this package.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "python3 -m pip uninstall hotkey",
+				},
+			],
+		},
+	],
+	"settings": {
+		"tab_size": 4,
+		"auto_match_enabled": false,
+		"rulers": [ 100, 100.5,],
+	},
+}

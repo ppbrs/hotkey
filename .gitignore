@@ -1,0 +1,9 @@
+# Sublime Text temporary files.
+*.sublime-workspace
+
+# Python temporary files and optimizations.
+*.pyc
+dist/*
+
+# Temporary and logging files
+*.log

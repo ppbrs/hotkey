@@ -1,0 +1,14 @@
+#!/usr/bin/sudo /usr/bin/python3
+# pylint: disable=invalid-name
+"""
+Starts the hotkey-drill application.
+"""
+
+import sys
+sys.dont_write_bytecode = True
+
+from prepare_pythonpath import prepare_pythonpath  # pylint: disable=wrong-import-position
+prepare_pythonpath()
+
+from hotkey.main import run  # pylint: disable=wrong-import-position
+run()
