@@ -112,14 +112,13 @@ class KeyComboListTerminal(KeyComboListInterface):
             # ctrl + r
             Key_combo(
                 mode=Mode(ctrl=True), key=Key(specific="r"),
-                legend=["Start searching in history.",
-                        "Search in history: go to the previous result (i.e. search backward).", ],
+                legend=["Search in history: go to the previous result (i.e. search backward, reverse-i-search).", ],
                 weight=self.WEIGHT_NORMAL,
                 log=log),
             # ctrl + s
             Key_combo(
                 mode=Mode(ctrl=True), key=Key(specific="s"),
-                legend=["Search in history: go to the following result (i.e. search forward).", ],
+                legend=["Search in history: go to the following result (i.e. search forward, i-search).", ],
                 weight=self.WEIGHT_NORMAL,
                 log=log),
             # ctrl + u

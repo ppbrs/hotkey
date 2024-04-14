@@ -25,7 +25,7 @@ class KeyComboListSublime(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # alt + b
             Key_combo(mode=Mode(alt=True), key=Key(specific="b"),
-                      legend=["Custom: Cancel the running build.", ],
+                      legend=["[CUSTOM] Cancel the running build.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -37,7 +37,7 @@ class KeyComboListSublime(KeyComboListInterface):
                       ),
             # alt + d
             Key_combo(mode=Mode(alt=True), key=Key(specific="d"),
-                      legend=["Custom: Delete the character under (=to the right) the cursor.", ],
+                      legend=["[CUSTOM] Delete the character under (=to the right) the cursor.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -49,7 +49,7 @@ class KeyComboListSublime(KeyComboListInterface):
                       ),
             # alt + z
             Key_combo(mode=Mode(alt=True), key=Key(specific="z"),
-                      legend=["Custom: Word wrap. (Also works in VS Code)", ],
+                      legend=["[CUSTOM] Word wrap. (Also works in VS Code)", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -192,7 +192,7 @@ class KeyComboListSublime(KeyComboListInterface):
                       ),
             # ctrl + shift + c
             Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(specific="c"),
-                      legend=["Custom: Copy file path", ],
+                      legend=["[CUSTOM] Copy file path", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -216,7 +216,7 @@ class KeyComboListSublime(KeyComboListInterface):
                       ),
             # ctrl + shift + o
             Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(specific="o"),
-                      legend=["Custom: Open the containing directory in file explorer.", ],
+                      legend=["[CUSTOM] Open the containing directory in file explorer.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -228,7 +228,7 @@ class KeyComboListSublime(KeyComboListInterface):
                       ),
             # ctrl + shift + y
             Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(specific="y"),
-                      legend=["Custom: Reveal the file in the side bar.", ],
+                      legend=["[CUSTOM] Reveal the file in the side bar.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),

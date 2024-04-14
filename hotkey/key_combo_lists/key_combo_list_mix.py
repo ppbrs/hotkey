@@ -23,6 +23,12 @@ class KeyComboListMix(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # standalone keys
             # ---------------------------------------------------------------------
+            # s
+            Key_combo(mode=Mode(), key=Key(specific="s"),
+                      legend=["Pinta: Cycle through \"Rectange\", \"Ellipse\", and \"Magic Wand\" select tools.", ],
+                      weight=self.WEIGHT_NORMAL,
+                      log=log
+                      ),
             # tab
             Key_combo(mode=Mode(), key=Key(tab=True),
                       legend=["Chrome: Jump to the next control. -->", ],
@@ -135,6 +141,18 @@ class KeyComboListMix(KeyComboListInterface):
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
+            # ctrl + [
+            Key_combo(mode=Mode(ctrl=True), key=Key(specific="["),
+                      legend=["Obsidian: [CUSTOM] Show tags.", ],
+                      weight=self.WEIGHT_NORMAL,
+                      log=log
+                      ),
+            # ctrl + ]
+            Key_combo(mode=Mode(ctrl=True), key=Key(specific="]"),
+                      legend=["Obsidian: [CUSTOM] Show outline.", ],
+                      weight=self.WEIGHT_NORMAL,
+                      log=log
+                      ),
 
             # ---------------------------------------------------------------------
             # shift + ...
@@ -192,7 +210,7 @@ class KeyComboListMix(KeyComboListInterface):
                       ),
             # ctrl + shift + v
             Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(specific="v"),
-                      legend=["Obsidian: Custom: Open a vault.", ],
+                      legend=["Obsidian: [CUSTOM]: Open a vault.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
