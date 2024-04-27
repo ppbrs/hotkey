@@ -25,7 +25,7 @@ classifiers = [
 # After installing the project, a `hotkey` command will be available.
 # Executing it will do the equivalent of `from hotkey import start_drill; start_drill()`.
 [project.scripts]
-hotkey = "hotkey:start_drill"
+hotkey = "hotkey.main:run"
 
 # [build-system] declares which build backend to use - a library that takes a source tree
 # and builds a source distribution (*.tar.gz) or wheel (*.whl) from it.
