@@ -1,11 +1,8 @@
 """
 """
-
-# Standard library imports
 import os
 import time
-# Third party imports
-# Local application/library imports
+
 from hotkey.error import Error
 
 

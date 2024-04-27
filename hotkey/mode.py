@@ -1,9 +1,6 @@
 """
 """
 from __future__ import annotations
-# Standard library imports
-# Third party imports
-# Local application/library imports
 
 
 class Mode:

@@ -3,8 +3,7 @@
 
 import unittest
 
-
-from ..key import (Key, Key_error, )
+from ..key import Key, Key_error
 
 
 class Key_test(unittest.TestCase):

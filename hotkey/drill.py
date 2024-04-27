@@ -1,14 +1,13 @@
 """
 """
 
-# Standard library imports
 import random
 import time
-# Third party imports
+
 from pybp.log import Log
-# Local application/library imports
-from hotkey.utils import (clear_screen, )
+
 from hotkey.key_combo import Key_combo
+from hotkey.utils import clear_screen
 
 
 class Drill():

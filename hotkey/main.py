@@ -10,17 +10,16 @@ Put the most frequent hotkeys to the list.
 #     root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 #     sys.path.append(root_path)
 
-
-# Standard library imports
 import time
-# Third party imports
+
 from pybp.log import Log
-# Local application imports
+
 from hotkey.drill import Drill
 from hotkey.key_combo_lists.key_combo_list_mix import KeyComboListMix
 from hotkey.key_combo_lists.key_combo_list_sublime import KeyComboListSublime
 from hotkey.key_combo_lists.key_combo_list_terminal import KeyComboListTerminal
-from hotkey.key_combo_lists.key_combo_list_universal import KeyComboListUniversal
+from hotkey.key_combo_lists.key_combo_list_universal import \
+    KeyComboListUniversal
 from hotkey.key_combo_lists.key_combo_list_vscode import KeyComboListVscode
 
 

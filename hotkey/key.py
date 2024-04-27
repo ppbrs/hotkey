@@ -1,11 +1,9 @@
 """ Key abstraction.
 """
-
-# Standard library imports
 from __future__ import annotations
+
 import random
-# Third party imports
-# Local application/library imports
+
 from hotkey.error import Error
 
 

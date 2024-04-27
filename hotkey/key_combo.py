@@ -1,15 +1,13 @@
 """
 
 """
-
-# Standard library imports
 import threading
-# Third party imports
+
 import keyboard
 from pybp.log import Log
-# Local application/library imports
-from hotkey.mode import Mode
+
 from hotkey.key import Key
+from hotkey.mode import Mode
 
 
 class Key_combo:

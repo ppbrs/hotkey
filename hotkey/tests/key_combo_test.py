@@ -4,30 +4,31 @@
 """
 
 import _thread
-import keyboard
 import time
 import unittest
 from unittest.mock import Mock
+
+import keyboard
 
 # this give access to the methods-under-test
 # 1) when run directly
 # 2) when run under nosetests
 if __name__ == '__main__' and __package__ is None:
-    import sys
     import os
+    import sys
     sut_path = os.path.dirname(os.path.normpath(os.path.join(__file__, '..')))
     print(f'appending `{sut_path}` to sys/path', sut_path)
     sys.path.append(sut_path)
 
     from event_fake import Event_fake
-    from key_combo import Key_combo
     from key import Key
+    from key_combo import Key_combo
     from mode import Mode
 else:
-    from .event_fake import Event_fake
-    from ..key_combo import Key_combo
     from ..key import Key
+    from ..key_combo import Key_combo
     from ..mode import Mode
+    from .event_fake import Event_fake
 
 
 class Key_combo_test(unittest.TestCase):
