@@ -26,7 +26,6 @@ from hotkey.key_combo_lists.key_combo_list_vscode import KeyComboListVscode
 def run():
 
     log = Log(console=False)
-    # log = Log(fname=(__file__ + '.log'), level=Log.DEBUG, filemode='w', console=False)
     try:
 
         key_combo_list = []

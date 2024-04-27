@@ -83,7 +83,3 @@ class Drill():
         print()
         print('done, quitting ...')
         time.sleep(1.0)
-
-
-if __name__ == "__main__":
-    pass
