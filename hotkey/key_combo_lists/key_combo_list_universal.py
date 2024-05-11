@@ -25,13 +25,13 @@ class KeyComboListUniversal(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # alt + space
             Key_combo(mode=Mode(alt=True), key=Key(specific="space"),
-                      legend=["Windows: window menu", ],
+                      legend=["Windows: Open the window menu.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # alt + tab
             Key_combo(mode=Mode(alt=True), key=Key(tab=True),
-                      legend=["Windows: task swtcher forward -->", ],
+                      legend=["Windows: Task swtcher forward. -->", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -45,25 +45,25 @@ class KeyComboListUniversal(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # esc
             Key_combo(mode=Mode(), key=Key(esc=True),
-                      legend=["ESC", ],
+                      legend=["Press ESC key.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # tab
             Key_combo(mode=Mode(), key=Key(tab=True),
-                      legend=["TAB"],
+                      legend=["Press TAB key."],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # enter
             Key_combo(mode=Mode(), key=Key(enter=True),
-                      legend=["ENTER"],
+                      legend=["Press ENTER key."],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # del
             Key_combo(mode=Mode(), key=Key(delete=True),
-                      legend=["DEL"],
+                      legend=["Press DEL key."],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -73,13 +73,13 @@ class KeyComboListUniversal(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # ctrl + a
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="a"),
-                      legend=["Select all", ],
+                      legend=["Select all.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + b
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="b"),
-                      legend=["bold", ],
+                      legend=["Boldify.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -103,7 +103,7 @@ class KeyComboListUniversal(KeyComboListInterface):
                       ),
             # ctrl + i
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="i"),
-                      legend=["italic", ],
+                      legend=["Italicize.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -115,13 +115,13 @@ class KeyComboListUniversal(KeyComboListInterface):
                       ),
             # ctrl + s
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="s"),
-                      legend=["save", ],
+                      legend=["Save.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + u
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="u"),
-                      legend=["underline", ],
+                      legend=["Underline.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -133,31 +133,31 @@ class KeyComboListUniversal(KeyComboListInterface):
                       ),
             # ctrl + w
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="w"),
-                      legend=["Multitab: close current tab", ],
+                      legend=["Multitab: Close the current tab.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + x
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="x"),
-                      legend=["cut to clipboard", ],
+                      legend=["Cut to clipboard.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + y
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="y"),
-                      legend=["redo", ],
+                      legend=["Re-do.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + z
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="z"),
-                      legend=["undo", ],
+                      legend=["Undo.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + tab
             Key_combo(mode=Mode(ctrl=True), key=Key(tab=True),
-                      legend=["Multitab: switch to next tab -->", ],
+                      legend=["Multitab: Switch to the next tab. -->", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -171,7 +171,7 @@ class KeyComboListUniversal(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # ctrl + shift + tab
             Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(tab=True),
-                      legend=["Multitab: switch to previous tab <--", ],
+                      legend=["Multitab: Switch to the previous tab. <--", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -187,7 +187,7 @@ class KeyComboListUniversal(KeyComboListInterface):
             # ---------------------------------------------------------------------
             # shift + alt + tab
             Key_combo(mode=Mode(shift=True, alt=True), key=Key(tab=True),
-                      legend=["Windows: task swtcher backward <--", ],
+                      legend=["Windows: Task swtcher backward. <--", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),

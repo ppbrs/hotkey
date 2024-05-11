@@ -105,7 +105,7 @@ class KeyComboListMix(KeyComboListInterface):
                       ),
             # ctrl + r
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="r"),
-                      legend=["Pinta: Resize the image.", ],
+                      legend=["Pinta: Resize the image (= change resolution).", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -119,19 +119,20 @@ class KeyComboListMix(KeyComboListInterface):
             Key_combo(mode=Mode(ctrl=True), key=Key(enter=True),
                       legend=[
                           "wandbox.org: Build and run.",
+                          "Obsidian: Open the link under the cursor in a new tab.",
                           "Nautilus: Open a new Nautilus TAB looking inside the selected directory."],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + 1
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="1"),
-                      legend=["Nautilus: Show list.", ],
+                      legend=["Nautilus: Show files/directories as a list.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
             # ctrl + 2
             Key_combo(mode=Mode(ctrl=True), key=Key(specific="2"),
-                      legend=["Nautilus: Show grid.", ],
+                      legend=["Nautilus: Show files/directories as a grid.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -167,7 +168,7 @@ class KeyComboListMix(KeyComboListInterface):
             Key_combo(mode=Mode(shift=True), key=Key(enter=True),
                       legend=[
                           "Telegram, Teams: Make a new line (without sending the message).",
-                          "Nautilus: Open a new Nautilus WINDOW looking inside this directory."],
+                          "Nautilus: Open a new Nautilus WINDOW looking inside the selected directory."],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
@@ -208,6 +209,12 @@ class KeyComboListMix(KeyComboListInterface):
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
+            # ctrl + shift + r
+            Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(specific="r"),
+                      legend=["Pinta: Resize the canvas (= expand the canvas).", ],
+                      weight=self.WEIGHT_NORMAL,
+                      log=log
+                      ),
             # ctrl + shift + v
             Key_combo(mode=Mode(ctrl=True, shift=True), key=Key(specific="v"),
                       legend=["Obsidian: [CUSTOM]: Open a vault.", ],
@@ -237,6 +244,12 @@ class KeyComboListMix(KeyComboListInterface):
             # ctrl + alt + v
             Key_combo(mode=Mode(ctrl=True, alt=True), key=Key(specific="v"),
                       legend=["Google Document: Paste formatting from clipboard.", ],
+                      weight=self.WEIGHT_NORMAL,
+                      log=log
+                      ),
+            # ctrl + alt + x
+            Key_combo(mode=Mode(ctrl=True, alt=True), key=Key(specific="x"),
+                      legend=["Pinta: Auto crop.", ],
                       weight=self.WEIGHT_NORMAL,
                       log=log
                       ),
