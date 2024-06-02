@@ -1,8 +1,8 @@
 
 import unittest
 
-import hotkey_drill
-from hotkey_drill.mode import Mode
+# import hotkey_drill
+from hotkey.mode import Mode
 
 
 class Mode_test(unittest.TestCase):

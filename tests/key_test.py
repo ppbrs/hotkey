@@ -3,7 +3,7 @@
 
 import unittest
 
-from ..key import Key, Key_error
+from hotkey.key import Key
 
 
 class Key_test(unittest.TestCase):
@@ -12,7 +12,7 @@ class Key_test(unittest.TestCase):
     digits_list = [chr(c) for c in range(ord('0'), ord('9') + 1)]
     symbols_list = ('`', '-', '=',
                     '[', ']', '\\',
-                    ';', '\'',
+                    ';', '\"',
                     ',', '.', '/',
                     'space')
 
@@ -47,7 +47,7 @@ class Key_test(unittest.TestCase):
         for _ in range(1000):
             sut = Key(symbols=True)
             self.assertTrue(sut.key in self.symbols_list,
-                            'Key is not in valid range')
+                            f'Key `{sut.key}`is not in valid range: {self.symbols_list}')
 
     def test_chars(self):
 
@@ -63,13 +63,6 @@ class Key_test(unittest.TestCase):
         for _ in range(1000):
             sut = Key(esc=True)
             self.assertEqual(sut.key, 'esc',
-                             'Key has wrong value')
-
-    def test_llkbd(self):
-
-        for _ in range(1000):
-            sut = Key(llkbd=True)
-            self.assertEqual(sut.key, 'llkbd',
                              'Key has wrong value')
 
     def test_backspace(self):
@@ -98,7 +91,7 @@ class Key_test(unittest.TestCase):
         for _ in range(1000):
             sut = Key(nonchars=True)
             self.assertTrue(((sut.key == 'esc') or
-                             (sut.key == 'llkbd') or
+                             (sut.key == 'delete') or
                              (sut.key == 'backspace') or
                              (sut.key == 'enter') or
                              (sut.key == 'tab')),
@@ -154,7 +147,7 @@ class Key_test(unittest.TestCase):
     def test_none(self):
 
         for _ in range(1000):
-            with self.assertRaises(Key_error):
+            with self.assertRaises(Key.KeyError):
                 Key()
 
     def test_compare(self):

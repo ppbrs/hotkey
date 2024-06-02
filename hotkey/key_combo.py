@@ -63,9 +63,6 @@ class Key_combo:
                                     name=event.name)
         elif (event.event_type == 'down'):
 
-            # if event.name is None:  # code 0 returns `None`
-            #     event.name = 'llkbd'
-
             event_key = Key(specific=event.name)
             key_match = (event_key == self.key)
 

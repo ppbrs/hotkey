@@ -25,9 +25,13 @@ if __name__ == '__main__' and __package__ is None:
     from key_combo import Key_combo
     from mode import Mode
 else:
-    from ..key import Key
-    from ..key_combo import Key_combo
-    from ..mode import Mode
+    # from ..key import Key
+    # from ..key_combo import Key_combo
+    # from ..mode import Mode
+    # from .event_fake import Event_fake
+    from hotkey.key import Key
+    from hotkey.key_combo import Key_combo
+    from hotkey.mode import Mode
     from .event_fake import Event_fake
 
 
