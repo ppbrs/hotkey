@@ -6,7 +6,6 @@
 import _thread
 import time
 import unittest
-from unittest.mock import Mock
 
 import keyboard
 
@@ -32,6 +31,7 @@ else:
     from hotkey.key import Key
     from hotkey.key_combo import Key_combo
     from hotkey.mode import Mode
+
     from .event_fake import Event_fake
 
 
@@ -99,7 +99,7 @@ class Key_combo_test(unittest.TestCase):
             key = Key(digits=True)
             key.key = test_set['key.key']
             mode = test_set['mode']
-            sut = Key_combo(mode=mode, key=key, log=Mock(), legend=[], weight=1)
+            sut = Key_combo(mode=mode, key=key, legend=[], weight=1)
             _thread.start_new_thread(self._send_events,
                                      (sut, test_set['events'], ))
             self.assertEqual(test_set['result'], sut.wait(),

@@ -1,13 +1,11 @@
 """ Interface that is common to all hotkeys configurations.
 """
-# pylint: disable=import-error
-
-# Standard library imports
 import abc
-# Third party imports
+import logging
+
 from hotkey.key_combo import Key_combo
-from pybp.log import Log
-# Local application imports
+
+_logger = logging.getLogger(__name__)
 
 
 class KeyComboListInterface(abc.ABC):
@@ -18,12 +16,12 @@ class KeyComboListInterface(abc.ABC):
     LEGEND_PREFIX = "DEFAULT_PREFIX"
 
     @abc.abstractmethod
-    def _get(self, log: Log) -> list[Key_combo]:
+    def _get(self) -> list[Key_combo]:
         pass
 
-    def get(self, log: Log) -> list[Key_combo]:
+    def get(self) -> list[Key_combo]:
         """ Return all hotkeys in the list. Insert a specific prefix. """
-        key_combo_list = self._get(log)
+        key_combo_list = self._get()
         for _, key_combo in enumerate(key_combo_list):
             for i, _ in enumerate(key_combo.legend):
                 key_combo.legend[i] = self.LEGEND_PREFIX + ': ' + key_combo.legend[i]

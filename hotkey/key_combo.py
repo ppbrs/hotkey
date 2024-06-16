@@ -1,18 +1,22 @@
 """
 
 """
+import logging
 import threading
 
 import keyboard
-from pybp.log import Log
 
 from hotkey.key import Key
 from hotkey.mode import Mode
 
+_logger = logging.getLogger(__name__)
+
 
 class Key_combo:
 
-    def __init__(self, mode: Mode, key: Key, log: Log, legend: list[str], weight: int):
+    def __init__(
+        self, mode: Mode, key: Key, legend: list[str], weight: int
+    ):
         """
 
         Args:
@@ -26,7 +30,6 @@ class Key_combo:
         self.key = key
         self.legend = legend
         self.weight = weight
-        self.log = log
         assert (self.weight > 0), "Bad weight"
 
     def __del__(self):
@@ -50,7 +53,7 @@ class Key_combo:
         if event.event_type not in ('down', 'up', ):
             raise TypeError('Unexpected event type: neither `down` nor `up`')
 
-        self.log.debug(f'Key_combo.callback: event={str(event)}')
+        _logger.debug(f'Key_combo.callback: event={str(event)}')
         modes = ('alt', 'left alt',
                  'alt gr', 'right alt',
                  'ctrl', 'right ctrl', 'left ctrl',

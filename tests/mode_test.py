@@ -1,7 +1,6 @@
 
 import unittest
 
-# import hotkey_drill
 from hotkey.mode import Mode
 
 
@@ -80,8 +79,9 @@ class Mode_test(unittest.TestCase):
                                  f'Pressed `{mode_nonmatching}` should not match expected `{mode_expected}`')
 
 
-if __name__ == '__main__':
-
-    print(f'which(hotkey_drill) -> {hotkey_drill.__file__}')
-    print(f'version(hotkey_drill) -> {hotkey_drill.__version__}')
+def main():
     unittest.main()
+
+
+if __name__ == '__main__':
+    main()

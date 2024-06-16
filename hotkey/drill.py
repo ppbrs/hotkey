@@ -1,23 +1,22 @@
 """
 """
-
+import logging
 import random
 import time
 
-from pybp.log import Log
-
 from hotkey.key_combo import Key_combo
 from hotkey.utils import clear_screen
+
+_logger = logging.getLogger(__name__)
 
 
 class Drill():
 
     @staticmethod
-    def run(count: int, key_combo_list: list[Key_combo], log: Log):
+    def run(count: int, key_combo_list: list[Key_combo]):
         """
         :param count: Number of iterations to run.
         :param key_combo_list: an iterable of `Key_combo` to choose from randomly.
-        :param log:
         """
         if len(key_combo_list) < 1:
             raise ValueError('key_combo_list is empty')
