@@ -43,11 +43,14 @@ class Key_combo:
         res += str(self.key)
         return '`' + res + '`'
 
-    def callback(self, event):
-        """Process keyboard event.
+    def callback(
+        self,
+        event: keyboard.KeyboardEvent
+    ) -> None:
+        """
+        Process a keyboard event.
 
-        event.name
-        event.type = keyboard.KEY_DOWN, keyboard.KEY_UP
+        Event is an object that at least has "name" and "event_type" attributes.
         """
 
         if event.event_type not in ('down', 'up', ):
