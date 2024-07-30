@@ -1,4 +1,4 @@
-"""Key_combo_test class."""
+"""KeyComboTest class."""
 import threading
 import time
 import unittest
@@ -7,27 +7,27 @@ from collections.abc import Iterable
 import keyboard  # type: ignore
 
 from hotkey.key import Key
-from hotkey.key_combo import Key_combo
+from hotkey.key_combo import KeyCombo
 from hotkey.mode import Mode
 
 from .event_fake import EventFake
 
 
 class KeyComboTest(unittest.TestCase):
-    """Test class for Key_combo."""
+    """Test class for KeyCombo."""
 
     def _send_events(
         self,
-        key_combo: Key_combo,
+        key_combo: KeyCombo,
         event_list: Iterable[EventFake],
     ) -> None:
-        """Call Key_combo callbacks with the events from the provided list."""
+        """Call KeyCombo callbacks with the events from the provided list."""
         time.sleep(0.1)
         for event in event_list:
             key_combo.callback(event)
 
     def test_alt_key_ok(self) -> None:
-        """Test that Key_combo captures events with alt key pressed."""
+        """Test that KeyCombo captures events with alt key pressed."""
 
         test_sets = (
             # -----------------------------------------------------------------
@@ -79,7 +79,7 @@ class KeyComboTest(unittest.TestCase):
             key = Key(digits=True)
             key.key = test_set["key.key"]
             mode = test_set["mode"]
-            sut = Key_combo(mode=mode, key=key, legend=[], weight=1)
+            sut = KeyCombo(mode=mode, key=key, legend=[], weight=1)
             threading.Thread(
                 target=self._send_events,
                 args=(sut, test_set["events"]),

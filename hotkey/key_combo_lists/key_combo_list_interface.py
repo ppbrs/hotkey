@@ -3,7 +3,7 @@
 import abc
 import logging
 
-from hotkey.key_combo import Key_combo
+from hotkey.key_combo import KeyCombo
 
 _logger = logging.getLogger(__name__)
 
@@ -16,10 +16,10 @@ class KeyComboListInterface(abc.ABC):
     LEGEND_PREFIX = "DEFAULT_PREFIX"
 
     @abc.abstractmethod
-    def _get(self) -> list[Key_combo]:
+    def _get(self) -> list[KeyCombo]:
         pass
 
-    def get(self) -> list[Key_combo]:
+    def get(self) -> list[KeyCombo]:
         """ Return all hotkeys in the list. Insert a specific prefix. """
         key_combo_list = self._get()
         for _, key_combo in enumerate(key_combo_list):

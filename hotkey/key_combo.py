@@ -1,4 +1,4 @@
-"""Key_combo class."""
+"""KeyCombo class."""
 import logging
 import threading
 
@@ -10,7 +10,7 @@ from hotkey.mode import Mode
 _logger = logging.getLogger(__name__)
 
 
-class Key_combo:
+class KeyCombo:
     """Set keyboard hooks and compare pressed combos with expected."""
 
     def __init__(
@@ -79,7 +79,7 @@ class Key_combo:
         if event.event_type not in ("down", "up", ):
             raise TypeError("Unexpected event type: neither `down` nor `up`")
 
-        _logger.debug("Key_combo.callback: event=%s", event)
+        _logger.debug("KeyCombo.callback: event=%s", event)
         # Key names that take part in defining a mode.
         modes = (
             "alt", "left alt",

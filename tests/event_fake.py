@@ -3,7 +3,7 @@ import keyboard  # type: ignore
 
 
 class EventFake:  # pylint: disable=R0903
-    """Fake keyboard event (keyboard.KeyboardEvent) for testing Key_combo callback."""
+    """Fake keyboard event (keyboard.KeyboardEvent) for testing KeyCombo wait and callback."""
 
     def __init__(
         self,
