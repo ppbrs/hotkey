@@ -13,7 +13,10 @@ authors = [
 	{name="ppbrs", email="prishchepenko.boris@gmail.com"},
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+	"keyboard",
+	"types-keyboard",
+]
 
 # For a complete list of classifiers, see https://pypi.org/classifiers/.
 classifiers = [
