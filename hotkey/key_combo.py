@@ -80,22 +80,14 @@ class KeyCombo:
             raise TypeError("Unexpected event type: neither `down` nor `up`")
 
         _logger.debug("KeyCombo.callback: event=%s", event)
-        # Key names that take part in defining a mode.
-        modes = (
-            "alt", "left alt",
-            "alt gr", "right alt",
-            "ctrl", "right ctrl", "left ctrl",
-            "shift", "right shift", "left shift",
-            "left windows",
-        )
-        if event.name in modes:
+        if event.name in Mode.modifier_keys:
             self.mode_actual.update(
-                is_set=(event.event_type == "down"), name=event.name)
+                is_set=(event.event_type == "down"), modifier_key=event.name)
         elif event.event_type == "down":
             event_key = Key(specific=event.name)
             key_match = event_key == self.key
 
-            mode_match = self.mode_actual.is_expected(expected=self.mode)
+            mode_match = self.mode_actual == self.mode
 
             quit_request = self._is_quit_request(mode=self.mode_actual, key=event_key)
             good = (key_match and mode_match)

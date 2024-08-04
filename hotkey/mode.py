@@ -1,24 +1,38 @@
-"""
-"""
+"""Mode class."""
 from __future__ import annotations
+
+ModifierKey = str
+"""
+Distinct modifiers keys are:
+    "alt",
+    "alt-gr",
+    "ctrl",
+    "ctrl-gr",
+    "shift",
+    "win".
+"""
 
 
 class Mode:
-    """
-        Instance of `Mode` holds combination of modifier keys.
+    """Instance of `Mode` holds combination of modifier keys."""
 
-        Modifiers keys are alt, alt-gr, ctrl, ctrl-gr, shift.
+    modifier_keys = [
+        "alt", "left alt",
+        "alt gr", "right alt",
+        "ctrl", "right ctrl", "left ctrl",
+        "shift", "right shift", "left shift",
+        "left windows",
+    ]
 
-    """
-
-    def __init__(self,
-                 ctrl: bool = False,
-                 ctrl_gr: bool = False,
-                 alt: bool = False,
-                 alt_gr: bool = False,
-                 shift: bool = False,
-                 win: bool = False
-                 ) -> None:
+    def __init__(  # pylint: disable=too-many-arguments
+        self,
+        ctrl: bool = False,
+        ctrl_gr: bool = False,
+        alt: bool = False,
+        alt_gr: bool = False,
+        shift: bool = False,
+        win: bool = False
+    ) -> None:
 
         if alt and alt_gr:
             raise ValueError("Mode with `alt` and `alt-gr` is not possible")
@@ -49,40 +63,34 @@ class Mode:
             modifiers_list.append("win")
         return " + ".join(modifiers_list)
 
-    def __eq__(self, other: Mode) -> bool:
-        return ((self.alt == other.alt)
-                and (self.alt_gr == other.alt_gr)
-                and (self.ctrl == other.ctrl)
-                and (self.ctrl_gr == other.ctrl_gr)
-                and (self.shift == other.shift)
-                and (self.win == other.win)
-                )
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Mode):
+            return False
+        alt_eq = self.alt == other.alt
+        alt_gr_eq = self.alt_gr == other.alt_gr
+        shift_eq = self.shift == other.shift
 
-    def update(self, is_set: bool, name: str) -> None:
+        if other.ctrl_gr:
+            ctrl_eq = ((self.ctrl_gr == other.ctrl_gr)
+                       and not self.ctrl
+                       and not other.ctrl)
+        else:
+            ctrl_eq = (self.ctrl or self.ctrl_gr) == (other.ctrl or other.ctrl_gr)
+        win_eq = self.win == other.win
 
-        if name in ("alt", "left alt", ):
+        return alt_eq and alt_gr_eq and ctrl_eq and shift_eq and win_eq
+
+    def update(self, is_set: bool, modifier_key: ModifierKey) -> None:
+        """Add to or remove the modifier from the mode.
+        """
+        if modifier_key in ("alt", "left alt", ):
             self.alt = is_set
-        elif name in ("alt gr", "right alt", ):
+        elif modifier_key in ("alt gr", "right alt", ):
             self.alt_gr = is_set
-        elif name in ("ctrl", "left ctrl", ):
+        elif modifier_key in ("ctrl", "left ctrl", ):
             self.ctrl = is_set
-        elif name in ("right ctrl", ):
+        elif modifier_key in ("right ctrl", ):
             # print(f"ctrl_gr = {is_set}")
             self.ctrl_gr = is_set
-        elif name in ("shift", "right shift", "left shift", ):
+        elif modifier_key in ("shift", "right shift", "left shift", ):
             self.shift = is_set
-
-    def is_expected(self, expected: Mode) -> bool:
-
-        alt_eq = (self.alt == expected.alt)
-        alt_gr = (self.alt_gr == expected.alt_gr)
-        shift_eq = (self.shift == expected.shift)
-
-        if expected.ctrl_gr:
-            ctrl_eq = ((self.ctrl_gr == expected.ctrl_gr)
-                       and not self.ctrl
-                       and not expected.ctrl)
-        else:
-            ctrl_eq = ((self.ctrl or self.ctrl_gr) == (expected.ctrl or expected.ctrl_gr))
-
-        return alt_eq and alt_gr and ctrl_eq and shift_eq
