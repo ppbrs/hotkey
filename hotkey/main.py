@@ -1,15 +1,6 @@
 """
-Drill specific hotkeys from the list.
-
-Put the most frequent hotkeys to the list.
+Drill specific hotkeys from the provided lists.
 """
-
-# if not __package__:
-#     import sys
-#     import os
-#     root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
-#     sys.path.append(root_path)
-
 import logging
 import pathlib
 import time
@@ -23,12 +14,13 @@ from hotkey.key_combo_lists.key_combo_list_universal import KeyComboListUniversa
 from hotkey.key_combo_lists.key_combo_list_vscode import KeyComboListVscode
 
 
-def run():
+def run() -> None:
+    """Run hotkey drills from all lists."""
     log_file = pathlib.Path(datetime.today().strftime("%Y%m%d.%H%M%S.log"))
-    format = "%(asctime)s.%(msecs)03d %(levelname)-8s %(name)s: %(funcName)s: %(message)s"
-    datefmt = "%H%M%S"
+    log_fmt = "%(asctime)s.%(msecs)03d %(levelname)-8s %(name)s: %(funcName)s: %(message)s"
+    date_fmt = "%H%M%S"
     logging.basicConfig(
-        format=format, datefmt=datefmt,
+        format=log_fmt, datefmt=date_fmt,
         level=logging.DEBUG,
         filename=log_file, filemode="w",
     )
@@ -46,9 +38,9 @@ def run():
         Drill.run(
             count=30,
             key_combo_list=key_combo_list)
-    except Exception as e:
-        logger.error(f'{e.__class__.__name__}: {str(e)}')
-        print('done, quitting ...')
+    except Exception as e:  # pylint: disable=broad-exception-caught
+        logger.error("%s: %s", e.__class__.__name__, e)
+        print(f"{e.__class__.__name__}: Done, quitting ...")
         time.sleep(1)
 
 

@@ -49,3 +49,12 @@ path = "hotkey/__about__.py"
 [project.urls]
 "Homepage" = "https://github.com/ppbrs/hotkey"
 "Bug Tracker" = "https://github.com/ppbrs/hotkey/issues"
+
+[tool.isort]
+# See all isort options: https://pycqa.github.io/isort/docs/configuration/options.html
+line_length = 100
+wrap_length = 100
+
+# Personally, I find this option the best. It allows faster debugging and leaving comments
+# for a particular import.
+force_single_line = "True"
