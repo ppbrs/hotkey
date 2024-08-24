@@ -73,3 +73,7 @@ line-length = 100
 quote-style = "double"
 # Indent with spaces, rather than tabs.
 indent-style = "space"
+
+[tool.ruff.lint]
+
+select = ["ALL"]

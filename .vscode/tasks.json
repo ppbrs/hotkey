@@ -41,6 +41,24 @@
 			"command": "isort ${file}",
 			"group": "build",
 		},
+		{
+			"label": "python3: Run `ruff check` on this module.",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}",
+			},
+			"command": "ruff check \"${file}\"",
+			"group": "build",
+		},
+		{
+			"label": "python3: Run `ruff check` on whole project.",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}",
+			},
+			"command": "ruff check",
+			"group": "build",
+		},
 		// =========================================================================================
 		// Test:
 		// =========================================================================================

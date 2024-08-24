@@ -21,21 +21,33 @@
 				// Lint:
 				// ---------------------------------------------------------------------------------
 				{
-					"name": "python3: Run Pylama on all repo.",
-					"working_dir": "${project_path}",
-					"shell_cmd": "pylama -o pylama.ini",
-					"file_regex": "(...*?):([0-9]*):.*",
-				},
-				{
 					"name": "python3: Run Pylama on this module.",
 					"working_dir": "${project_path}",
 					"shell_cmd": "pylama -o pylama.ini \"${file}\"",
 					"file_regex": "(...*?):([0-9]*):([0-9]*)\\s(.*)",
 				},
 				{
+					"name": "python3: Run Pylama on all repo.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "pylama -o pylama.ini",
+					"file_regex": "(...*?):([0-9]*):.*",
+				},
+				{
 					"name": "python3: Run Isort on this module.",
 					"working_dir": "${project_path}",
 					"shell_cmd": "isort \"${file}\"",
+				},
+				{
+					"name": "python3: Run `ruff check` on this module.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "ruff check \"${file}\"",
+					"file_regex": "(...*?):([0-9]*):.*",
+				},
+				{
+					"name": "python3: Run `ruff check` on all repo.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "ruff check",
+					"file_regex": "(...*?):([0-9]*):.*",
 				},
 				// ---------------------------------------------------------------------------------
 				// Format:
