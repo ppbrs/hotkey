@@ -1,4 +1,5 @@
 """Tests for Mode class."""
+
 import unittest
 
 from hotkey.mode import Mode
@@ -47,26 +48,71 @@ class ModeTest(unittest.TestCase):
         # 2. list of matching modes
         # 3. list of not matching modes
         test_sets: list[tuple[Mode, list[Mode], list[Mode]]] = [
-            (Mode(alt=True),
-             [Mode(alt=True), ],
-             [Mode(), Mode(alt_gr=True), Mode(ctrl=True), Mode(ctrl_gr=True), Mode(shift=True), ],
-             ),
-            (Mode(alt_gr=True),
-             [Mode(alt_gr=True), ],
-             [Mode(), Mode(alt=True), Mode(ctrl=True), Mode(ctrl_gr=True), Mode(shift=True), ],
-             ),
-            (Mode(ctrl=True),
-             [Mode(ctrl=True), Mode(ctrl_gr=True), ],
-             [Mode(), Mode(alt=True), Mode(alt_gr=True), Mode(shift=True), ],
-             ),
-            (Mode(ctrl_gr=True),
-             [Mode(ctrl_gr=True), ],
-             [Mode(), Mode(alt=True), Mode(alt_gr=True), Mode(ctrl=True), Mode(shift=True), ],
-             ),
-            (Mode(shift=True),
-             [Mode(shift=True), ],
-             [Mode(), Mode(alt=True), Mode(alt_gr=True), Mode(ctrl=True), Mode(ctrl_gr=True), ],
-             ),
+            (
+                Mode(alt=True),
+                [
+                    Mode(alt=True),
+                ],
+                [
+                    Mode(),
+                    Mode(alt_gr=True),
+                    Mode(ctrl=True),
+                    Mode(ctrl_gr=True),
+                    Mode(shift=True),
+                ],
+            ),
+            (
+                Mode(alt_gr=True),
+                [
+                    Mode(alt_gr=True),
+                ],
+                [
+                    Mode(),
+                    Mode(alt=True),
+                    Mode(ctrl=True),
+                    Mode(ctrl_gr=True),
+                    Mode(shift=True),
+                ],
+            ),
+            (
+                Mode(ctrl=True),
+                [
+                    Mode(ctrl=True),
+                    Mode(ctrl_gr=True),
+                ],
+                [
+                    Mode(),
+                    Mode(alt=True),
+                    Mode(alt_gr=True),
+                    Mode(shift=True),
+                ],
+            ),
+            (
+                Mode(ctrl_gr=True),
+                [
+                    Mode(ctrl_gr=True),
+                ],
+                [
+                    Mode(),
+                    Mode(alt=True),
+                    Mode(alt_gr=True),
+                    Mode(ctrl=True),
+                    Mode(shift=True),
+                ],
+            ),
+            (
+                Mode(shift=True),
+                [
+                    Mode(shift=True),
+                ],
+                [
+                    Mode(),
+                    Mode(alt=True),
+                    Mode(alt_gr=True),
+                    Mode(ctrl=True),
+                    Mode(ctrl_gr=True),
+                ],
+            ),
         ]
 
         for test_set in test_sets:
@@ -76,11 +122,13 @@ class ModeTest(unittest.TestCase):
             for mode_matching in modes_matching:
                 self.assertTrue(
                     mode_matching == mode_expected,
-                    f"Pressed `{mode_matching}` must match expected `{mode_expected}`")
+                    f"Pressed `{mode_matching}` must match expected `{mode_expected}`",
+                )
             for mode_nonmatching in modes_nonmatching:
                 self.assertFalse(
                     mode_nonmatching == mode_expected,
-                    f"Pressed `{mode_nonmatching}` should not match expected `{mode_expected}`")
+                    f"Pressed `{mode_nonmatching}` should not match expected `{mode_expected}`",
+                )
 
 
 def main() -> None:

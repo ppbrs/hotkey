@@ -1,4 +1,5 @@
 """Key class."""
+
 from __future__ import annotations
 
 import random
@@ -10,9 +11,10 @@ class Key:
     An abstraction representing a key of a keyboard that is chosen randomly from all keys
     in a subset.
     """
+
     letters_list = [chr(c) for c in range(ord("a"), ord("z") + 1)]
     digits_list = [chr(c) for c in range(ord("0"), ord("9") + 1)]
-    symbols_list = ["`", "-", "=", "[", "]", "\\", ";", "\"", ",", ".", "/", "space"]
+    symbols_list = ["`", "-", "=", "[", "]", "\\", ";", '"', ",", ".", "/", "space"]
     symbol_key_mapping = {
         "~": "`",
         "!": "1",
@@ -32,11 +34,17 @@ class Key:
 
     def __init__(
         self,
-        letters: bool = False, digits: bool = False, symbols: bool = False,
-        chars: bool = False, nonchars: bool = False,
-        esc: bool = False, backspace: bool = False, enter: bool = False, tab: bool = False,
+        letters: bool = False,
+        digits: bool = False,
+        symbols: bool = False,
+        chars: bool = False,
+        nonchars: bool = False,
+        esc: bool = False,
+        backspace: bool = False,
+        enter: bool = False,
+        tab: bool = False,
         delete: bool = False,
-        specific: str | None = None
+        specific: str | None = None,
     ) -> None:
         """Chooses one key randomly according to the arguments.
 
@@ -91,9 +99,8 @@ class Key:
     def __eq__(self, other: Any) -> bool:
         assert isinstance(other, Key)
         return (
-            self.key == other.key
-            or self.key.lower() == other.key
-            or self.key == other.key.lower())
+            self.key == other.key or self.key.lower() == other.key or self.key == other.key.lower()
+        )
 
     def __repr__(self) -> str:
         ret_val = str(self.key)

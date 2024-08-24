@@ -1,4 +1,5 @@
 """KeyComboTest class."""
+
 import threading
 import time
 import unittest
@@ -36,11 +37,10 @@ class KeyComboTest(unittest.TestCase):
             {
                 "mode": Mode(),
                 "key.key": "a",
-                "events":
-                [
+                "events": [
                     EventFake(event_type=keyboard.KEY_DOWN, name="a"),
                 ],
-                "result": True
+                "result": True,
             },
             {
                 "mode": Mode(),
@@ -48,7 +48,7 @@ class KeyComboTest(unittest.TestCase):
                 "events": [
                     EventFake(event_type=keyboard.KEY_DOWN, name="b"),
                 ],
-                "result": False
+                "result": False,
             },
             # -----------------------------------------------------------------
             # alt + smth
@@ -60,7 +60,7 @@ class KeyComboTest(unittest.TestCase):
                     EventFake(event_type=keyboard.KEY_DOWN, name="alt"),
                     EventFake(event_type=keyboard.KEY_DOWN, name="1"),
                 ],
-                "result": True
+                "result": True,
             },
             {
                 "mode": Mode(alt=True),
@@ -69,13 +69,12 @@ class KeyComboTest(unittest.TestCase):
                     EventFake(event_type=keyboard.KEY_DOWN, name="alt"),
                     EventFake(event_type=keyboard.KEY_DOWN, name="2"),
                 ],
-                "result": False
+                "result": False,
             },
             # -----------------------------------------------------------------
         )
 
         for test_set in test_sets:
-
             key = Key(digits=True)
             key.key = test_set["key.key"]
             mode = test_set["mode"]
@@ -84,8 +83,7 @@ class KeyComboTest(unittest.TestCase):
                 target=self._send_events,
                 args=(sut, test_set["events"]),
             ).start()
-            self.assertEqual(
-                test_set["result"], sut.wait(), "Test failed")
+            self.assertEqual(test_set["result"], sut.wait(), "Test failed")
             time.sleep(0.1)
             del sut
 
