@@ -12,31 +12,47 @@
 			"variants": [
 				// ---------------------------------------------------------------------------------
 				// Launch:
+				// ---------------------------------------------------------------------------------
 				{
 					"name": "Execute \"sudo hotkey\" in a new terminal.",
 					"shell_cmd": "gnome-terminal --full-screen --tab -- bash -c \"sudo hotkey; exec bash\"",
 				},
 				// ---------------------------------------------------------------------------------
 				// Lint:
+				// ---------------------------------------------------------------------------------
 				{
-					"name": "Lint: Run Pylama on all repo.",
+					"name": "python3: Run Pylama on all repo.",
 					"working_dir": "${project_path}",
 					"shell_cmd": "pylama -o pylama.ini",
 					"file_regex": "(...*?):([0-9]*):.*",
 				},
 				{
-					"name": "Lint: Run Pylama on this module.",
+					"name": "python3: Run Pylama on this module.",
 					"working_dir": "${project_path}",
-					"shell_cmd": "pylama -o pylama.ini ${file}",
+					"shell_cmd": "pylama -o pylama.ini \"${file}\"",
 					"file_regex": "(...*?):([0-9]*):([0-9]*)\\s(.*)",
 				},
 				{
-					"name": "Lint: Run Isort on this module.",
+					"name": "python3: Run Isort on this module.",
 					"working_dir": "${project_path}",
-					"shell_cmd": "isort ${file}",
+					"shell_cmd": "isort \"${file}\"",
+				},
+				// ---------------------------------------------------------------------------------
+				// Format:
+				// ---------------------------------------------------------------------------------
+				{
+					"name": "python3: Run `ruff format` on this module.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "ruff format \"${file}\"",
+				},
+				{
+					"name": "python3: Run `ruff format` on all repo.",
+					"working_dir": "${project_path}",
+					"shell_cmd": "ruff format",
 				},
 				// ---------------------------------------------------------------------------------
 				// Debug:
+				// ---------------------------------------------------------------------------------
 				{
 					"name": "python3: Run this module.",
 					"shell_cmd": "python3 ${file}",
