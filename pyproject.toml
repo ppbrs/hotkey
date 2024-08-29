@@ -16,6 +16,7 @@ requires-python = ">=3.10"
 dependencies = [
 	"keyboard",
 	"types-keyboard",
+	"termcolor=3.3",
 ]
 
 # For a complete list of classifiers, see https://pypi.org/classifiers/.

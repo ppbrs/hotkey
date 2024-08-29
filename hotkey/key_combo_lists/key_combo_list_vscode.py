@@ -8,6 +8,7 @@ from hotkey.mode import Mode
 # "noqa" in class's first line silences the error that I cannot explain:
 # Class cannot subclass "KeyComboListInterface" (has type "Any")  [misc] [mypy]
 
+
 class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-public-methods  # noqa
     """Data class that holds specific hotkeys."""
 
@@ -18,6 +19,22 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             # ---------------------------------------------------------------------
             # alt + ...
             # ---------------------------------------------------------------------
+            # alt + [
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="["),
+                legend=[
+                    "CUSTOM: Select PREVIOUS suggestion.",
+                ],
+            ),
+            # alt + ]
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="]"),
+                legend=[
+                    "CUSTOM: Select NEXT suggestion.",
+                ],
+            ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
             # ---------------------------------------------------------------------
@@ -27,6 +44,14 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             # ---------------------------------------------------------------------
             # ctrl + ...
             # ---------------------------------------------------------------------
+            # ctrl + space
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="space"),
+                legend=[
+                    "Toggle suggestions and suggestion details.",
+                ],
+            ),
             # ctrl + `
             KeyCombo(
                 mode=Mode(ctrl=True),
@@ -35,12 +60,20 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                     "Toggle the integrated Terminal.",
                 ],
             ),
-            # ctrl + b
+            # ctrl + B
             KeyCombo(
                 mode=Mode(ctrl=True),
                 key=Key(specific="b"),
                 legend=[
                     "Toggle the sidebar.",
+                ],
+            ),
+            # ctrl + T
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="t"),
+                legend=[
+                    "Select a symbol. Project-scope.",
                 ],
             ),
             # ---------------------------------------------------------------------
@@ -65,12 +98,36 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                     'Open "Explore" view.',
                 ],
             ),
-            # ctrl + shift + o
+            # ctrl + shift + i
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="i"),
+                legend=[
+                    "Format the file (ruff, rustfmt, ...)",
+                ],
+            ),
+            # ctrl + shift + L
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="L"),
+                legend=[
+                    "Select all occurences of the selected word",
+                ],
+            ),
+            # ctrl + shift + M
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="M"),
+                legend=[
+                    'Toggle "Problems" panel',
+                ],
+            ),
+            # ctrl + shift + O
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="o"),
                 legend=[
-                    "Go to symbol ...",
+                    "Select a symbol. File-scope.",
                 ],
             ),
             # ctrl + shift + y
@@ -78,7 +135,31 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="y"),
                 legend=[
-                    'Toggle "Debug Console".',
+                    'Toggle "Debug Console" panel.',
+                ],
+            ),
+            # ctrl + shift + \
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="\\"),
+                legend=[
+                    "Jump to the matching bracket.",
+                ],
+            ),
+            # ctrl + shift + ;
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific=";"),
+                legend=[
+                    "Focus on breadcrumbs.",
+                ],
+            ),
+            # ctrl + shift + .
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="."),
+                legend=[
+                    "Focus on breadcrumbs. Dropdown select.",
                 ],
             ),
             # ---------------------------------------------------------------------
@@ -88,6 +169,14 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             # ---------------------------------------------------------------------
             # ctrl + alt + ...
             # ---------------------------------------------------------------------
+            # ctrl + alt + s
+            KeyCombo(
+                mode=Mode(ctrl=True, alt=True),
+                key=Key(specific="s"),
+                legend=[
+                    "Source Control: Stage selected range. (After Ctrl-K)",
+                ],
+            ),
             # ---------------------------------------------------------------------
             # ctrl-gr + ...
             # ---------------------------------------------------------------------

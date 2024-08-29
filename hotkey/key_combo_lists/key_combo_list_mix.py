@@ -7,8 +7,11 @@ from hotkey.key_combo import KeyCombo
 from hotkey.key_combo_lists.key_combo_list_interface import KeyComboListInterface
 from hotkey.mode import Mode
 
+from termcolor import colored
+
 # "noqa" in class's first line silences the error that I cannot explain:
 # Class cannot subclass "KeyComboListInterface" (has type "Any")  [misc] [mypy]
+
 
 class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-methods # noqa
     """Data class that holds specific hotkeys."""
@@ -16,6 +19,10 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
     LEGEND_PREFIX = "MIX"
 
     def _get(self) -> list[KeyCombo]:
+        pinta = colored("PINTA", attrs=["bold"])
+        chrome = colored("CHROME", attrs=["bold"])
+        ubuntu = colored("UBUNTU", attrs=["bold"])
+        google_sheets = colored("GOOGLE SHEETS", attrs=["bold"])
         return [
             # ---------------------------------------------------------------------
             # standalone keys
@@ -25,7 +32,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(),
                 key=Key(specific="s"),
                 legend=[
-                    'Pinta: Cycle through "Rectange", "Ellipse", and "Magic Wand" select tools.',
+                    f'{pinta}: Cycle through "Rectange", "Ellipse", and "Magic Wand" select tools.',
                 ],
             ),
             # tab
@@ -33,7 +40,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(),
                 key=Key(tab=True),
                 legend=[
-                    "Chrome: Jump to the next control. -->",
+                    f"{chrome}: Jump to the next control. -->",
                 ],
             ),
             # ---------------------------------------------------------------------
@@ -67,6 +74,31 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="["),
                 legend=[
                     "vim: Go to normal mode.",
+                    "Google Document: Decrease indent.",
+                ],
+            ),
+            # ctrl + ]
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="]"),
+                legend=[
+                    "Google Document: Increase indent.",
+                ],
+            ),
+            # ctrl + 1
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="1"),
+                legend=[
+                    f"{chrome}: Switch to the 1st (leftmost) tab.",
+                ],
+            ),
+            # ctrl + 2
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="2"),
+                legend=[
+                    f"{chrome}: Switch to the 2nd (from the left) tab.",
                 ],
             ),
             # ctrl + d
@@ -75,6 +107,23 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="d"),
                 legend=[
                     "Python interpreter: Exit.",
+                    "Google Meet: Mute/Unmute your microphone.",
+                ],
+            ),
+            # ctrl + e
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="e"),
+                legend=[
+                    "Google Meet: Turn camera ON or OFF.",
+                ],
+            ),
+            # ctrl + g
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="g"),
+                legend=[
+                    f"{pinta}: Rotate 90° counter-clockwise.",
                 ],
             ),
             # ctrl + h
@@ -83,6 +132,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="h"),
                 legend=[
                     "Nautilus: Toggle showing hidden files.",
+                    f"{pinta}: Rotate 90° clockwise.",
                 ],
             ),
             # ctrl + k
@@ -98,7 +148,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="l"),
                 legend=[
-                    "Chrome: Focus on address bar.",
+                    f"{chrome}: Focus on address bar.",
                 ],
             ),
             # ctrl + n
@@ -106,16 +156,8 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="n"),
                 legend=[
-                    "Chrome: Open new (normal, non-incognito) WINDOW.",
+                    f"{chrome}: Open new (normal, non-incognito) WINDOW.",
                     "Nautilus: Open a new Nautilus WINDOW pointing at the same directory.",
-                ],
-            ),
-            # ctrl + o
-            KeyCombo(
-                mode=Mode(ctrl=True),
-                key=Key(specific="o"),
-                legend=[
-                    "Obsidian: Open a note.",
                 ],
             ),
             # ctrl + r
@@ -123,7 +165,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="r"),
                 legend=[
-                    "Pinta: Resize the image (= change resolution).",
+                    f"{pinta}: Resize the image (= change resolution).",
                 ],
             ),
             # ctrl + t
@@ -131,7 +173,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="t"),
                 legend=[
-                    "Chrome: Open a new TAB.",
+                    f"{chrome}: Open a new TAB.",
                 ],
             ),
             # ctrl + enter
@@ -139,8 +181,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(enter=True),
                 legend=[
-                    "wandbox.org: Build and run.",
-                    "Obsidian: Open the link under the cursor in a new tab.",
+                    "godbolt.org: Recompile (When in manual recompile mode).",
                     "Nautilus: Open a new Nautilus TAB looking inside the selected directory.",
                 ],
             ),
@@ -168,20 +209,20 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Google Document: Open the list of hotkeys.",
                 ],
             ),
-            # ctrl + [
+            # ctrl + ;
             KeyCombo(
                 mode=Mode(ctrl=True),
-                key=Key(specific="["),
+                key=Key(specific=";"),
                 legend=[
-                    "Obsidian: [CUSTOM] Show tags.",
+                    f"{google_sheets}: Insert current DATE.",
                 ],
             ),
-            # ctrl + ]
+            # ctrl + `
             KeyCombo(
                 mode=Mode(ctrl=True),
-                key=Key(specific="]"),
+                key=Key(specific="`"),
                 legend=[
-                    "Obsidian: [CUSTOM] Show outline.",
+                    f"{google_sheets}: Toggle result and formula.",
                 ],
             ),
             # ---------------------------------------------------------------------
@@ -192,7 +233,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(shift=True),
                 key=Key(tab=True),
                 legend=[
-                    "Chrome: Jump to the previous control. <--",
+                    f"{chrome}: Jump to the previous control. <--",
                 ],
             ),
             # shift + enter
@@ -212,37 +253,53 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Nautilus: Go to home directory (Press this and then enter.).",
                 ],
             ),
+            # shift + h = H
+            KeyCombo(
+                mode=Mode(shift=True),
+                key=Key(specific="h"),
+                legend=[
+                    f"{chrome}: Vimium: Go back in history.",
+                ],
+            ),
+            # shift + l = L
+            KeyCombo(
+                mode=Mode(shift=True),
+                key=Key(specific="L"),
+                legend=[
+                    f"{chrome}: Vimium: Go forward in history.",
+                ],
+            ),
             # ---------------------------------------------------------------------
             # ctrl + shift + ...
             # ---------------------------------------------------------------------
+            # ctrl + shift + enter
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(enter=True),
+                legend=[
+                    "godbolt.org: Toggle between the manual and automatic recompile mode).",
+                ],
+            ),
             # ctrl + shift + b
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="b"),
                 legend=[
-                    "Chrome: Toggle the bookmarks bar.",
-                ],
-            ),
-            # ctrl + shift + f
-            KeyCombo(
-                mode=Mode(ctrl=True, shift=True),
-                key=Key(specific="f"),
-                legend=[
-                    "Obsidian: Search.",
+                    f"{chrome}: Toggle the bookmarks bar.",
                 ],
             ),
             # ctrl + shift + n
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="n"),
-                legend=["Chrome: Open new incognito window.", "Nautilus: Create a new directory."],
+                legend=[f"{chrome}: Open new incognito window.", "Nautilus: Create a new directory."],
             ),
             # ctrl + shift + o
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="o"),
                 legend=[
-                    "Chrome: Open the bookmarks manager.",
+                    f"{chrome}: Open the bookmarks manager.",
                 ],
             ),
             # ctrl + shift + r
@@ -250,15 +307,15 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="r"),
                 legend=[
-                    "Pinta: Resize the canvas (= expand the canvas).",
+                    f"{pinta}: Resize the canvas (= expand the canvas).",
                 ],
             ),
-            # ctrl + shift + v
+            # ctrl + shift + u
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
-                key=Key(specific="v"),
+                key=Key(specific="u"),
                 legend=[
-                    "Obsidian: [CUSTOM]: Open a vault.",
+                    f"{ubuntu}: Unicode symbol prefix.",
                 ],
             ),
             # ctrl + shift + x
@@ -266,7 +323,39 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="x"),
                 legend=[
-                    "Pinta: Crop selection.",
+                    f"{pinta}: Crop selection.",
+                ],
+            ),
+            # ctrl + shift + 7
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="7"),
+                legend=[
+                    "Google Document: Numbered list.",
+                ],
+            ),
+            # ctrl + shift + 8
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="8"),
+                legend=[
+                    "Google Document: Bulleted list.",
+                ],
+            ),
+            # ctrl + shift + 9
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="9"),
+                legend=[
+                    "Google Document: Check list.",
+                ],
+            ),
+            # ctrl + shift + ;
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific=";"),
+                legend=[
+                    f"{google_sheets}: Insert current TIME.",
                 ],
             ),
             # ---------------------------------------------------------------------
@@ -296,7 +385,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="x"),
                 legend=[
-                    "Pinta: Auto crop.",
+                    f"{pinta}: Auto crop.",
                 ],
             ),
             # ctrl + alt + 0
@@ -329,6 +418,17 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="3"),
                 legend=[
                     "Google Document: Apply `Normal Heading 3`.",
+                ],
+            ),
+            # ---------------------------------------------------------------------
+            # ctrl + alt + shift + ...
+            # ---------------------------------------------------------------------
+            # ctrl + alt + shift + ;
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True, alt=True),
+                key=Key(specific=";"),
+                legend=[
+                    f"{google_sheets}: Insert current DATE and TIME.",
                 ],
             ),
             # ---------------------------------------------------------------------

@@ -10,6 +10,7 @@ from datetime import datetime
 
 from hotkey.drill import Drill
 from hotkey.key_combo_lists.key_combo_list_mix import KeyComboListMix
+from hotkey.key_combo_lists.key_combo_list_obsidian import KeyComboListObsidian
 from hotkey.key_combo_lists.key_combo_list_sublime import KeyComboListSublime
 from hotkey.key_combo_lists.key_combo_list_terminal import KeyComboListTerminal
 from hotkey.key_combo_lists.key_combo_list_universal import KeyComboListUniversal
@@ -41,6 +42,7 @@ def run() -> None:
         key_combo_list += KeyComboListMix().get()
         key_combo_list += KeyComboListSublime().get()
         key_combo_list += KeyComboListTerminal().get()
+        key_combo_list += KeyComboListObsidian().get()
         key_combo_list += KeyComboListUniversal().get()
         key_combo_list += KeyComboListVscode().get()
 
