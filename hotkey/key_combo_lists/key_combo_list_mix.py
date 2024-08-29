@@ -98,6 +98,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="k"),
                 legend=[
                     "Google Document: Add a link.",
+                    "Obsidian: [CUSTOM] Add an internal link.",
                 ],
                 weight=self.WEIGHT_NORMAL,
             ),
@@ -200,6 +201,15 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="]"),
                 legend=[
                     "Obsidian: [CUSTOM] Show outline.",
+                ],
+                weight=self.WEIGHT_NORMAL,
+            ),
+            # ctrl + ;
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific=";"),
+                legend=[
+                    "Google Sheets: Insert current date.",
                 ],
                 weight=self.WEIGHT_NORMAL,
             ),

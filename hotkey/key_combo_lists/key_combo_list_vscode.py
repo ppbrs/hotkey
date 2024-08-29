@@ -87,6 +87,15 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 ],
                 weight=self.WEIGHT_NORMAL,
             ),
+            # ctrl + shift + \ (generates SIGQUIT)
+            # KeyCombo(
+            #     mode=Mode(ctrl=True, shift=True),
+            #     key=Key(specific="\\"),
+            #     legend=[
+            #         'Jump to a matching bracket.',
+            #     ],
+            #     weight=self.WEIGHT_NORMAL,
+            # ),
             # ---------------------------------------------------------------------
             # shift + alt + ...
             # ---------------------------------------------------------------------
