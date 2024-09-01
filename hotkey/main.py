@@ -37,7 +37,7 @@ def run() -> None:
         key_combo_list += KeyComboListUniversal().get()
         key_combo_list += KeyComboListVscode().get()
 
-        Drill.run(count=30, key_combo_list=key_combo_list)
+        Drill().run(count=30, key_combo_list=key_combo_list)
     except Exception as e:  # pylint: disable=broad-exception-caught
         logger.error("%s: %s", e.__class__.__name__, e)
         print(f"{e.__class__.__name__}: Done, quitting ...")
