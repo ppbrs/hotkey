@@ -34,7 +34,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 legend=[
                     "Toggle the integrated Terminal.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + b
             KeyCombo(
@@ -43,7 +42,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 legend=[
                     "Toggle the sidebar.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + ...
@@ -58,7 +56,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 legend=[
                     'Open "Debug" view.',
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + e
             KeyCombo(
@@ -67,7 +64,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 legend=[
                     'Open "Explore" view.',
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + o
             KeyCombo(
@@ -76,7 +72,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 legend=[
                     "Go to symbol ...",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + y
             KeyCombo(
@@ -85,7 +80,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 legend=[
                     'Toggle "Debug Console".',
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + \ (generates SIGQUIT)
             # KeyCombo(
@@ -94,7 +88,6 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             #     legend=[
             #         'Jump to a matching bracket.',
             #     ],
-            #     weight=self.WEIGHT_NORMAL,
             # ),
             # ---------------------------------------------------------------------
             # shift + alt + ...

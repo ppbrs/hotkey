@@ -14,7 +14,7 @@ _logger = logging.getLogger(__name__)
 class KeyCombo:
     """Set keyboard hooks and compare pressed combos with expected."""
 
-    def __init__(self, mode: Mode, key: Key, legend: list[str], weight: int):
+    def __init__(self, mode: Mode, key: Key, legend: list[str]):
         """
         :param mode: Object of class Mode.
         :param key: Object of class Key.
@@ -24,8 +24,6 @@ class KeyCombo:
         self.mode = mode
         self.key = key
         self.legend = legend
-        self.weight = weight
-        assert self.weight > 0, "Bad weight"
 
         self.result: bool | None = None
         self.sem: threading.Semaphore

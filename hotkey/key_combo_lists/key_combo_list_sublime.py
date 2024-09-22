@@ -25,7 +25,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "[CUSTOM] Cancel the running build.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + c
             KeyCombo(
@@ -34,7 +33,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "FIND dialog: Toggle case sensitive search.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + d
             KeyCombo(
@@ -43,7 +41,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "[CUSTOM] Delete the character under (=to the right) the cursor.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + r
             KeyCombo(
@@ -52,7 +49,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "FIND dialog: Toggle regex search.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + z
             KeyCombo(
@@ -61,14 +57,12 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "[CUSTOM] Word wrap. (Also works in VS Code)",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + enter
             KeyCombo(
                 mode=Mode(alt=True),
                 key=Key(enter=True),
                 legend=["FIND dialog: Select all."],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
@@ -83,7 +77,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "auto-completion: Choose the highlighted variant.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl + ...
@@ -92,12 +85,10 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
             # ---------------------------------------------------------------------
             # KeyCombo(mode=Mode(ctrl=True), key=Key(specific="+"),
             #           legend=["Sublime+: zoom in", ],
-            #           weight=self.WEIGHT_NORMAL,
             #           ),
             # ctrl + -
             # KeyCombo(mode=Mode(ctrl=True), key=Key(specific="-"),
             #           legend=["Sublime+: zoom out", ],
-            #           weight=self.WEIGHT_NORMAL,
             #           ),
             # ctrl + /
             KeyCombo(
@@ -106,7 +97,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Comment/Uncomment current line.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + space
             KeyCombo(
@@ -115,7 +105,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "auto-completion: Show variants.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + 0
             KeyCombo(
@@ -124,7 +113,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Focus on sidebar.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + 1
             KeyCombo(
@@ -133,7 +121,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Focus on 1st column.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + 2
             KeyCombo(
@@ -142,7 +129,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Focus on 2nd column.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + b
             KeyCombo(
@@ -151,7 +137,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Build.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + d
             KeyCombo(
@@ -160,7 +145,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Select next.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + g
             KeyCombo(
@@ -169,7 +153,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Go to line number ...",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + m
             KeyCombo(
@@ -178,7 +161,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Jump to the matching bracket.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + p
             KeyCombo(
@@ -187,7 +169,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Go to file ...",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + t
             KeyCombo(
@@ -196,7 +177,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Swap two selections.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + ...
@@ -206,7 +186,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(shift=True),
                 key=Key(enter=True),
                 legend=["FIND dialog: Search backwards."],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl + shift + ...
@@ -218,7 +197,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Move the file under focus to the 1st column.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + 2
             KeyCombo(
@@ -227,7 +205,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Move the file under focus to the 2nd column.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + b
             KeyCombo(
@@ -236,7 +213,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Build with ...",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + c
             KeyCombo(
@@ -245,7 +221,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "[CUSTOM] Copy file path",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + d
             KeyCombo(
@@ -254,7 +229,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Duplicate the line",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + k
             KeyCombo(
@@ -263,7 +237,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Delete the line. (Also works in VS Code)",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + m
             KeyCombo(
@@ -272,7 +245,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Select everything inside the brackets, braces,parentheses.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + o
             KeyCombo(
@@ -281,7 +253,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "[CUSTOM] Open the containing directory in file explorer.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + p
             KeyCombo(
@@ -290,7 +261,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "commands",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + y
             KeyCombo(
@@ -299,7 +269,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "[CUSTOM] Reveal the file in the side bar.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + /
             KeyCombo(
@@ -308,7 +277,6 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 legend=[
                     "Comment/Uncomment a selected block.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + alt + ...

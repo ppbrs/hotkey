@@ -27,7 +27,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Windows: Open the window menu.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + tab
             KeyCombo(
@@ -36,7 +35,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Windows: Task swtcher forward. -->",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
@@ -51,28 +49,24 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Press ESC key.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # tab
             KeyCombo(
                 mode=Mode(),
                 key=Key(tab=True),
                 legend=["Press TAB key."],
-                weight=self.WEIGHT_NORMAL,
             ),
             # enter
             KeyCombo(
                 mode=Mode(),
                 key=Key(enter=True),
                 legend=["Press ENTER key."],
-                weight=self.WEIGHT_NORMAL,
             ),
             # del
             KeyCombo(
                 mode=Mode(),
                 key=Key(delete=True),
                 legend=["Press DEL key."],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl + ...
@@ -84,7 +78,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Select all.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + b
             KeyCombo(
@@ -93,7 +86,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Boldify.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + c
             KeyCombo(
@@ -102,7 +94,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Copy a selection to the clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + f
             KeyCombo(
@@ -111,7 +102,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Chrome,etc: Start searching on the page.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + g
             KeyCombo(
@@ -120,7 +110,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Chrome,etc: Find NEXT on the page.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + i
             KeyCombo(
@@ -129,7 +118,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Italicize.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + q
             KeyCombo(
@@ -138,7 +126,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Linux: Close the application.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + s
             KeyCombo(
@@ -147,7 +134,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Save.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + u
             KeyCombo(
@@ -156,7 +142,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Underline.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + v
             KeyCombo(
@@ -165,7 +150,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Paste from the clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + w
             KeyCombo(
@@ -174,7 +158,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Multitab: Close the current tab.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + x
             KeyCombo(
@@ -183,7 +166,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Cut to clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + y
             KeyCombo(
@@ -192,7 +174,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Re-do.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + z
             KeyCombo(
@@ -201,7 +182,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Undo.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + tab
             KeyCombo(
@@ -210,7 +190,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Multitab: Switch to the next tab. -->",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + ...
@@ -225,7 +204,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Multitab: Switch to the previous tab. <--",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + g
             KeyCombo(
@@ -234,7 +212,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Chrome,etc: Find PREVIOUS on the page.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + alt + ...
@@ -246,7 +223,6 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 legend=[
                     "Windows: Task swtcher backward. <--",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl + alt + ...

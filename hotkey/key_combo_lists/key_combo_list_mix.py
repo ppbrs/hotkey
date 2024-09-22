@@ -27,7 +27,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     'Pinta: Cycle through "Rectange", "Ellipse", and "Magic Wand" select tools.',
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # tab
             KeyCombo(
@@ -36,7 +35,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Jump to the next control. -->",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # alt + ...
@@ -48,7 +46,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Nautilus: Show TAB #1.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + 2
             KeyCombo(
@@ -57,7 +54,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Nautilus: Show TAB #2.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
@@ -72,7 +68,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "vim: Go to normal mode.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + d
             KeyCombo(
@@ -81,7 +76,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Python interpreter: Exit.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + h
             KeyCombo(
@@ -90,7 +84,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Nautilus: Toggle showing hidden files.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + k
             KeyCombo(
@@ -100,7 +93,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Google Document: Add a link.",
                     "Obsidian: [CUSTOM] Add an internal link.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + l
             KeyCombo(
@@ -109,7 +101,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Focus on address bar.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + n
             KeyCombo(
@@ -119,7 +110,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Chrome: Open new (normal, non-incognito) WINDOW.",
                     "Nautilus: Open a new Nautilus WINDOW pointing at the same directory.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + o
             KeyCombo(
@@ -128,7 +118,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Obsidian: Open a note.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + r
             KeyCombo(
@@ -137,7 +126,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Pinta: Resize the image (= change resolution).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + t
             KeyCombo(
@@ -146,7 +134,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Open a new TAB.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + enter
             KeyCombo(
@@ -157,7 +144,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Obsidian: Open the link under the cursor in a new tab.",
                     "Nautilus: Open a new Nautilus TAB looking inside the selected directory.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + 1
             KeyCombo(
@@ -166,7 +152,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Nautilus: Show files/directories as a list.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + 2
             KeyCombo(
@@ -175,7 +160,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Nautilus: Show files/directories as a grid.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + /
             KeyCombo(
@@ -184,7 +168,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Open the list of hotkeys.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + [
             KeyCombo(
@@ -193,7 +176,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Obsidian: [CUSTOM] Show tags.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + ]
             KeyCombo(
@@ -202,7 +184,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Obsidian: [CUSTOM] Show outline.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + ;
             KeyCombo(
@@ -211,7 +192,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Sheets: Insert current date.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + ...
@@ -223,7 +203,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Jump to the previous control. <--",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # shift + enter
             KeyCombo(
@@ -233,7 +212,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Telegram, Teams: Make a new line (without sending the message).",
                     "Nautilus: Open a new Nautilus WINDOW looking inside the selected directory.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # shift + ` = ~
             KeyCombo(
@@ -242,7 +220,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Nautilus: Go to home directory (Press this and then enter.).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl + shift + ...
@@ -254,7 +231,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Toggle the bookmarks bar.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + f
             KeyCombo(
@@ -263,14 +239,12 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Obsidian: Search.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + n
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="n"),
                 legend=["Chrome: Open new incognito window.", "Nautilus: Create a new directory."],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + o
             KeyCombo(
@@ -279,7 +253,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Open the bookmarks manager.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + r
             KeyCombo(
@@ -288,7 +261,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Pinta: Resize the canvas (= expand the canvas).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + v
             KeyCombo(
@@ -297,7 +269,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Obsidian: [CUSTOM]: Open a vault.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + x
             KeyCombo(
@@ -306,7 +277,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Pinta: Crop selection.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + alt + ...
@@ -321,7 +291,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Copy formatting to clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + alt + v
             KeyCombo(
@@ -330,7 +299,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Paste formatting from clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + alt + x
             KeyCombo(
@@ -339,7 +307,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Pinta: Auto crop.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + alt + 0
             KeyCombo(
@@ -348,7 +315,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Apply `Normal Text`.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + alt + 1
             KeyCombo(
@@ -357,7 +323,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Apply `Normal Heading 1`.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + alt + 2
             KeyCombo(
@@ -366,7 +331,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Apply `Normal Heading 2`.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + alt + 3
             KeyCombo(
@@ -375,7 +339,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Google Document: Apply `Normal Heading 3`.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl-gr + ...

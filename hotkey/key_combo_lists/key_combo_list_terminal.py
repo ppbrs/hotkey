@@ -25,7 +25,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Move the cursor one word left <--.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # alt + f
             KeyCombo(
@@ -34,7 +33,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Move the cursor one word right -->.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
@@ -54,7 +52,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Move the cursor to the start of the line <--.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + b
             KeyCombo(
@@ -63,7 +60,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Move the cursor one character left <--.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + c
             KeyCombo(
@@ -72,7 +68,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Command-line interfaces: cancel, abort, interrupt",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + d
             KeyCombo(
@@ -82,7 +77,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                     "Delete a character under the cursor.",
                     "Python interpreter: exit",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + e
             KeyCombo(
@@ -91,7 +85,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Move the cursor to end of line -->.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + f
             KeyCombo(
@@ -100,7 +93,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Move the cursor one character to the right -->.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + k
             KeyCombo(
@@ -109,7 +101,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Clear up to the end -->.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + l
             KeyCombo(
@@ -118,7 +109,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Clear the screen.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + p
             KeyCombo(
@@ -127,7 +117,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Pull in the previous command.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + q
             KeyCombo(
@@ -136,7 +125,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Resume transmission.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + r
             KeyCombo(
@@ -146,7 +134,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                     "Search in history: go to the previous result "
                     "(i.e. search backward, reverse-i-search).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + s
             KeyCombo(
@@ -156,7 +143,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                     "Search in history: go to the following result "
                     "(i.e. search forward, i-search).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + u
             KeyCombo(
@@ -165,7 +151,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Clear up to the beginning <--.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + w
             KeyCombo(
@@ -174,7 +159,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Clear the last word <--.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + z
             KeyCombo(
@@ -183,7 +167,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Linux: suspend current process and put it to background (then `fg`).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # shift + ...
@@ -198,7 +181,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Copy the selection to clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + n
             KeyCombo(
@@ -207,7 +189,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Open a new terminal window (from within a terminal).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + t
             KeyCombo(
@@ -216,7 +197,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Open a new terminal tab (from within a terminal).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + v
             KeyCombo(
@@ -225,12 +205,10 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Paste from clipboard.",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ctrl + shift + w
             # KeyCombo(mode=Mode(ctrl=True, shift=True), key=Key(specific="w"),
             #           legend=["QTerminal: close current tab", ],
-            #           weight=self.WEIGHT_NORMAL,
             #           ),
             # ---------------------------------------------------------------------
             # shift + alt + ...
@@ -245,7 +223,6 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 legend=[
                     "Start a new terminal (from anywhere in Linux).",
                 ],
-                weight=self.WEIGHT_NORMAL,
             ),
             # ---------------------------------------------------------------------
             # ctrl-gr + ...

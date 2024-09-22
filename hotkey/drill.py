@@ -35,14 +35,11 @@ class Drill:  # pylint: disable=too-few-public-methods
             print(f"Drill {(i + 1)} of {count}:\n")
 
             # Set types of specific combos in this drill
-            weights = [i.weight for i in key_combo_list]
-            key_combo = random.choices(key_combo_list, weights=weights)[0]
+            key_combo = random.choices(key_combo_list)[0]
 
             has_legend = (key_combo.legend is not None) and (len(key_combo.legend) > 0)
             if has_legend:
                 self._show_legend(key_combo=key_combo)
-            # Show weight:
-            print(f"Weight = {key_combo.weight}")
 
             print("")
             self._wait_for_key_combo(key_combo=key_combo)

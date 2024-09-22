@@ -11,10 +11,6 @@ _logger = logging.getLogger(__name__)
 class KeyComboListInterface(abc.ABC):  # pylint: disable=too-few-public-methods
     """Interface class."""
 
-    WEIGHT_NORMAL = 1
-    WEIGHT_ELEVATED = 100  # for learning
-    LEGEND_PREFIX = "DEFAULT_PREFIX"
-
     @abc.abstractmethod
     def _get(self) -> list[KeyCombo]:
         pass
