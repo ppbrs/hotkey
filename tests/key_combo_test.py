@@ -78,7 +78,7 @@ class KeyComboTest(unittest.TestCase):
             key = Key(digits=True)
             key.key = test_set["key.key"]
             mode = test_set["mode"]
-            sut = KeyCombo(mode=mode, key=key, legend=[], weight=1)
+            sut = KeyCombo(mode=mode, key=key, legend=[])
             threading.Thread(
                 target=self._send_events,
                 args=(sut, test_set["events"]),
