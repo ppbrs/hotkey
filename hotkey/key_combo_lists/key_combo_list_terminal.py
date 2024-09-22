@@ -5,8 +5,10 @@ from hotkey.key_combo import KeyCombo
 from hotkey.key_combo_lists.key_combo_list_interface import KeyComboListInterface
 from hotkey.mode import Mode
 
+# "noqa" in class's first line silences the error that I cannot explain:
+# Class cannot subclass "KeyComboListInterface" (has type "Any")  [misc] [mypy]
 
-class KeyComboListTerminal(KeyComboListInterface):
+class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-public-methods # noqa
     """Data class that holds specific hotkeys."""
 
     LEGEND_PREFIX = "TERMINAL"
@@ -141,7 +143,8 @@ class KeyComboListTerminal(KeyComboListInterface):
                 mode=Mode(ctrl=True),
                 key=Key(specific="r"),
                 legend=[
-                    "Search in history: go to the previous result (i.e. search backward, reverse-i-search).",
+                    "Search in history: go to the previous result "
+                    "(i.e. search backward, reverse-i-search).",
                 ],
                 weight=self.WEIGHT_NORMAL,
             ),
@@ -150,7 +153,8 @@ class KeyComboListTerminal(KeyComboListInterface):
                 mode=Mode(ctrl=True),
                 key=Key(specific="s"),
                 legend=[
-                    "Search in history: go to the following result (i.e. search forward, i-search).",
+                    "Search in history: go to the following result "
+                    "(i.e. search forward, i-search).",
                 ],
                 weight=self.WEIGHT_NORMAL,
             ),

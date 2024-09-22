@@ -8,7 +8,7 @@ from hotkey.key_combo import KeyCombo
 _logger = logging.getLogger(__name__)
 
 
-class KeyComboListInterface(abc.ABC):
+class KeyComboListInterface(abc.ABC):  # pylint: disable=too-few-public-methods
     """Interface class."""
 
     WEIGHT_NORMAL = 1

@@ -5,8 +5,10 @@ from hotkey.key_combo import KeyCombo
 from hotkey.key_combo_lists.key_combo_list_interface import KeyComboListInterface
 from hotkey.mode import Mode
 
+# "noqa" in class's first line silences the error that I cannot explain:
+# Class cannot subclass "KeyComboListInterface" (has type "Any")  [misc] [mypy]
 
-class KeyComboListSublime(KeyComboListInterface):
+class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-public-methods # noqa
     """Data class that holds specific hotkeys."""
 
     LEGEND_PREFIX = "SUBLIME"
