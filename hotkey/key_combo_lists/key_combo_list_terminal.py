@@ -168,6 +168,22 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                     "Linux: suspend current process and put it to background (then `fg`).",
                 ],
             ),
+            # ctrl + 0
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="0"),
+                legend=[
+                    "Zoom Reset.",
+                ],
+            ),
+            # # ctrl + -
+            # KeyCombo(
+            #     mode=Mode(ctrl=True),
+            #     key=Key(specific="-"),
+            #     legend=[
+            #         "Zoom Out.",
+            #     ],
+            # ),
             # ---------------------------------------------------------------------
             # shift + ...
             # ---------------------------------------------------------------------
@@ -204,6 +220,14 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 key=Key(specific="v"),
                 legend=[
                     "Paste from clipboard.",
+                ],
+            ),
+            # ctrl + shift + =
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="="),
+                legend=[
+                    "Zoom In.",
                 ],
             ),
             # ctrl + shift + w

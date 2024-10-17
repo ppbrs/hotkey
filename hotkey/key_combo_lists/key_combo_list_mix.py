@@ -91,7 +91,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="k"),
                 legend=[
                     "Google Document: Add a link.",
-                    "Obsidian: [CUSTOM] Add an internal link.",
                 ],
             ),
             # ctrl + l
@@ -109,14 +108,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 legend=[
                     "Chrome: Open new (normal, non-incognito) WINDOW.",
                     "Nautilus: Open a new Nautilus WINDOW pointing at the same directory.",
-                ],
-            ),
-            # ctrl + o
-            KeyCombo(
-                mode=Mode(ctrl=True),
-                key=Key(specific="o"),
-                legend=[
-                    "Obsidian: Open a note.",
                 ],
             ),
             # ctrl + r
@@ -141,7 +132,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(enter=True),
                 legend=[
                     "wandbox.org: Build and run.",
-                    "Obsidian: Open the link under the cursor in a new tab.",
                     "Nautilus: Open a new Nautilus TAB looking inside the selected directory.",
                 ],
             ),
@@ -167,22 +157,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="/"),
                 legend=[
                     "Google Document: Open the list of hotkeys.",
-                ],
-            ),
-            # ctrl + [
-            KeyCombo(
-                mode=Mode(ctrl=True),
-                key=Key(specific="["),
-                legend=[
-                    "Obsidian: [CUSTOM] Show tags.",
-                ],
-            ),
-            # ctrl + ]
-            KeyCombo(
-                mode=Mode(ctrl=True),
-                key=Key(specific="]"),
-                legend=[
-                    "Obsidian: [CUSTOM] Show outline.",
                 ],
             ),
             # ctrl + ;
@@ -232,14 +206,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                     "Chrome: Toggle the bookmarks bar.",
                 ],
             ),
-            # ctrl + shift + f
-            KeyCombo(
-                mode=Mode(ctrl=True, shift=True),
-                key=Key(specific="f"),
-                legend=[
-                    "Obsidian: Search.",
-                ],
-            ),
             # ctrl + shift + n
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
@@ -260,14 +226,6 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="r"),
                 legend=[
                     "Pinta: Resize the canvas (= expand the canvas).",
-                ],
-            ),
-            # ctrl + shift + v
-            KeyCombo(
-                mode=Mode(ctrl=True, shift=True),
-                key=Key(specific="v"),
-                legend=[
-                    "Obsidian: [CUSTOM]: Open a vault.",
                 ],
             ),
             # ctrl + shift + x

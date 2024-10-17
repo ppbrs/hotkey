@@ -23,7 +23,7 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(alt=True),
                 key=Key(specific="b"),
                 legend=[
-                    "[CUSTOM] Cancel the running build.",
+                    "CUSTOM: Cancel the running build.",
                 ],
             ),
             # alt + c
@@ -39,7 +39,7 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(alt=True),
                 key=Key(specific="d"),
                 legend=[
-                    "[CUSTOM] Delete the character under (=to the right) the cursor.",
+                    "CUSTOM: Delete the character under (=to the right) the cursor.",
                 ],
             ),
             # alt + r
@@ -55,7 +55,7 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(alt=True),
                 key=Key(specific="z"),
                 legend=[
-                    "[CUSTOM] Word wrap. (Also works in VS Code)",
+                    "CUSTOM: Word wrap. (Also works in VS Code)",
                 ],
             ),
             # alt + enter
@@ -219,7 +219,7 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="c"),
                 legend=[
-                    "[CUSTOM] Copy file path",
+                    "CUSTOM: Copy file path",
                 ],
             ),
             # ctrl + shift + d
@@ -251,7 +251,7 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="o"),
                 legend=[
-                    "[CUSTOM] Open the containing directory in file explorer.",
+                    "CUSTOM: Open the containing directory in file explorer.",
                 ],
             ),
             # ctrl + shift + p
@@ -267,7 +267,7 @@ class KeyComboListSublime(KeyComboListInterface):  # pylint: disable=too-few-pub
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="y"),
                 legend=[
-                    "[CUSTOM] Reveal the file in the side bar.",
+                    "CUSTOM: Reveal the file in the side bar.",
                 ],
             ),
             # ctrl + shift + /
