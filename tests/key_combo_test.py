@@ -1,8 +1,9 @@
 """KeyComboTest class."""
 
+import dataclasses
+import logging
 import threading
 import time
-import unittest
 from collections.abc import Iterable
 
 import keyboard  # type: ignore
@@ -13,86 +14,91 @@ from hotkey.mode import Mode
 
 from .event_fake import EventFake
 
+_logger = logging.getLogger(__name__)
 
-class KeyComboTest(unittest.TestCase):
-    """Test class for KeyCombo."""
+
+@dataclasses.dataclass
+class KeyComboTestCase:
+    """Test case for KeyCombo."""
+
+    mode: Mode
+    key: Key
+    events: list[EventFake]
+    result: bool
+    """Returned from KeyCombo.wait() after events are sent."""
+
+
+key_combo_test_cases = [
+    # -----------------------------------------------------------------
+    # Without modifiers:
+    # -----------------------------------------------------------------
+    KeyComboTestCase(
+        Mode(),
+        Key(specific="a"),
+        [
+            EventFake(event_type=keyboard.KEY_DOWN, name="a"),
+        ],
+        True,
+    ),
+    KeyComboTestCase(
+        Mode(),
+        Key(specific="a"),
+        [
+            EventFake(event_type=keyboard.KEY_DOWN, name="b"),
+        ],
+        False,
+    ),
+    # -----------------------------------------------------------------
+    # alt + smth
+    # -----------------------------------------------------------------
+    KeyComboTestCase(
+        Mode(alt=True),
+        Key(specific="1"),
+        [
+            EventFake(event_type=keyboard.KEY_DOWN, name="alt"),
+            EventFake(event_type=keyboard.KEY_DOWN, name="1"),
+        ],
+        True,
+    ),
+    KeyComboTestCase(
+        Mode(alt=True),
+        Key(specific="1"),
+        [
+            EventFake(event_type=keyboard.KEY_DOWN, name="alt"),
+            EventFake(event_type=keyboard.KEY_DOWN, name="2"),
+        ],
+        False,
+    ),
+    # -----------------------------------------------------------------
+]
+
+
+def test_key_combo():
+    """
+    Test that KeyCombo correctly reports captured pressed combinations.
+    """
 
     def _send_events(
-        self,
         key_combo: KeyCombo,
         event_list: Iterable[EventFake],
     ) -> None:
         """Call KeyCombo callbacks with the events from the provided list."""
         time.sleep(0.1)
         for event in event_list:
+            _logger.debug("Sending event: %s.", event)
             key_combo.callback(event)
 
-    def test_alt_key_ok(self) -> None:
-        """Test that KeyCombo captures events with alt key pressed."""
-
-        test_sets = (
-            # -----------------------------------------------------------------
-            # Without modifiers:
-            # -----------------------------------------------------------------
-            {
-                "mode": Mode(),
-                "key.key": "a",
-                "events": [
-                    EventFake(event_type=keyboard.KEY_DOWN, name="a"),
-                ],
-                "result": True,
-            },
-            {
-                "mode": Mode(),
-                "key.key": "a",
-                "events": [
-                    EventFake(event_type=keyboard.KEY_DOWN, name="b"),
-                ],
-                "result": False,
-            },
-            # -----------------------------------------------------------------
-            # alt + smth
-            # -----------------------------------------------------------------
-            {
-                "mode": Mode(alt=True),
-                "key.key": "1",
-                "events": [
-                    EventFake(event_type=keyboard.KEY_DOWN, name="alt"),
-                    EventFake(event_type=keyboard.KEY_DOWN, name="1"),
-                ],
-                "result": True,
-            },
-            {
-                "mode": Mode(alt=True),
-                "key.key": "1",
-                "events": [
-                    EventFake(event_type=keyboard.KEY_DOWN, name="alt"),
-                    EventFake(event_type=keyboard.KEY_DOWN, name="2"),
-                ],
-                "result": False,
-            },
-            # -----------------------------------------------------------------
+    for test_case in key_combo_test_cases:
+        key_combo = KeyCombo(mode=test_case.mode, key=test_case.key, legend=[])
+        _logger.info("Testing KeyCombo: %s.", key_combo)
+        threading.Thread(
+            target=_send_events,
+            args=(key_combo, test_case.events),
+        ).start()
+        result = key_combo.wait()
+        assert test_case.result == result, (
+            f"Expected {test_case.result}, got {result}. "
+            f"KeyCombo: {key_combo}. Sent events: {test_case.events}."
         )
-
-        for test_set in test_sets:
-            key = Key(digits=True)
-            key.key = test_set["key.key"]
-            mode = test_set["mode"]
-            sut = KeyCombo(mode=mode, key=key, legend=[])
-            threading.Thread(
-                target=self._send_events,
-                args=(sut, test_set["events"]),
-            ).start()
-            self.assertEqual(test_set["result"], sut.wait(), "Test failed")
-            time.sleep(0.1)
-            del sut
-
-
-def main() -> None:
-    """Run all tests in KeyComboTest."""
-    _ = KeyComboTest()
-    unittest.main()
-
-
-if __name__ == "__main__":
-    main()
+        time.sleep(0.1)
+        del key_combo
