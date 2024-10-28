@@ -3,12 +3,13 @@
 	"tasks": [
 		// =========================================================================================
 		{
-			"label": "python3: Run this module locally.",
+			"label": "Run application.",
 			"type": "shell",
 			"options": {
 				"cwd": "${fileDirname}",
 			},
-			"command": "python3 -u ${file}",
+			"command": "gnome-terminal --full-screen --tab -- bash -c \"sudo hotkey; exec bash\"",
+
 			"group": "build",
 		},
 		// =========================================================================================

@@ -3,25 +3,25 @@
 	"configurations": [
 		{
 			"name": "python3: Debug this module.",
-			"type": "python",
+			"type": "debugpy",
 			"request": "launch",
 			"program": "${file}",
 			"cwd": "${fileDirname}",
-			"console": "integratedTerminal",
+			"console": "integratedTerminal", // Can be "externalTerminal".
 			"justMyCode": false,
 		},
 		{
-			"name": "python3: Debug PYTEST.",
-			"type": "python",
+			"name": "Debug PYTEST.",
+			"type": "debugpy",
 			"request": "launch",
 			"cwd": "${workspaceFolder}",
-			"program": "/usr/local/lib/python3.10/dist-packages/pytest",
+			"module": "pytest",
 			"args": [
-				// "--exitfirst",
-				// "--count=1",
-				// "-k test_v_links",
+				// "-k test_key_combo",
 			],
-			"console": "integratedTerminal",
+			"console": "externalTerminal",
+			"sudo": true,
+
 			"justMyCode": false,
 		},
 	]
