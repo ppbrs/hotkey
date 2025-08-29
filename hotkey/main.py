@@ -4,6 +4,7 @@ Drill specific hotkeys from the provided lists.
 
 import logging
 import pathlib
+import signal
 import time
 from datetime import datetime
 
@@ -13,6 +14,10 @@ from hotkey.key_combo_lists.key_combo_list_sublime import KeyComboListSublime
 from hotkey.key_combo_lists.key_combo_list_terminal import KeyComboListTerminal
 from hotkey.key_combo_lists.key_combo_list_universal import KeyComboListUniversal
 from hotkey.key_combo_lists.key_combo_list_vscode import KeyComboListVscode
+
+
+def sigquit_handler(sig_num: int, frame) -> None:
+    """Intercept SIGQUIT and ignore it because CTRL-BACKSLASH can be a valid combo."""
 
 
 def run() -> None:
@@ -28,6 +33,8 @@ def run() -> None:
         filemode="w",
     )
     logger = logging.getLogger(__name__)
+
+    signal.signal(signal.SIGQUIT, sigquit_handler)
 
     try:
         key_combo_list = []
