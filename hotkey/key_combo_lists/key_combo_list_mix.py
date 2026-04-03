@@ -23,6 +23,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
         chrome = colored("CHROME", attrs=["bold"])
         ubuntu = colored("UBUNTU", attrs=["bold"])
         google_sheets = colored("GOOGLE SHEETS", attrs=["bold"])
+        google_docs = colored("GOOGLE DOCS", attrs=["bold"])
         return [
             # ---------------------------------------------------------------------
             # standalone keys
@@ -74,7 +75,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 key=Key(specific="["),
                 legend=[
                     "vim: Go to normal mode.",
-                    "Google Document: Decrease indent.",
+                    f"{google_docs}: Decrease indent.",
                 ],
             ),
             # ctrl + ]
@@ -82,7 +83,15 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="]"),
                 legend=[
-                    "Google Document: Increase indent.",
+                    f"{google_docs}: Increase indent.",
+                ],
+            ),
+            # ctrl + \
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="\\"),
+                legend=[
+                    f"{google_docs}: Clear formatting.",
                 ],
             ),
             # ctrl + 1
@@ -140,7 +149,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="k"),
                 legend=[
-                    "Google Document: Add a link.",
+                    f"{google_docs}: Add a link.",
                 ],
             ),
             # ctrl + l
@@ -206,7 +215,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True),
                 key=Key(specific="/"),
                 legend=[
-                    "Google Document: Open the list of hotkeys.",
+                    f"{google_docs}: Open the list of hotkeys.",
                 ],
             ),
             # ctrl + ;
@@ -331,7 +340,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="7"),
                 legend=[
-                    "Google Document: Numbered list.",
+                    f"{google_docs}: Numbered list.",
                 ],
             ),
             # ctrl + shift + 8
@@ -339,7 +348,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="8"),
                 legend=[
-                    "Google Document: Bulleted list.",
+                    f"{google_docs}: Bulleted list.",
                 ],
             ),
             # ctrl + shift + 9
@@ -347,7 +356,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, shift=True),
                 key=Key(specific="9"),
                 legend=[
-                    "Google Document: Check list.",
+                    f"{google_docs}: Check list.",
                 ],
             ),
             # ctrl + shift + ;
@@ -369,7 +378,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="c"),
                 legend=[
-                    "Google Document: Copy formatting to clipboard.",
+                    f"{google_docs}: Copy formatting to clipboard.",
                 ],
             ),
             # ctrl + alt + v
@@ -377,7 +386,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="v"),
                 legend=[
-                    "Google Document: Paste formatting from clipboard.",
+                    f"{google_docs}: Paste formatting from clipboard.",
                 ],
             ),
             # ctrl + alt + x
@@ -393,7 +402,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="0"),
                 legend=[
-                    "Google Document: Apply `Normal Text`.",
+                    f"{google_docs}: Apply `Normal Text`.",
                 ],
             ),
             # ctrl + alt + 1
@@ -401,7 +410,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="1"),
                 legend=[
-                    "Google Document: Apply `Normal Heading 1`.",
+                    f"{google_docs}: Apply `Normal Heading 1`.",
                 ],
             ),
             # ctrl + alt + 2
@@ -409,7 +418,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="2"),
                 legend=[
-                    "Google Document: Apply `Normal Heading 2`.",
+                    f"{google_docs}: Apply `Normal Heading 2`.",
                 ],
             ),
             # ctrl + alt + 3
@@ -417,7 +426,7 @@ class KeyComboListMix(KeyComboListInterface):  # pylint: disable=too-few-public-
                 mode=Mode(ctrl=True, alt=True),
                 key=Key(specific="3"),
                 legend=[
-                    "Google Document: Apply `Normal Heading 3`.",
+                    f"{google_docs}: Apply `Normal Heading 3`.",
                 ],
             ),
             # ---------------------------------------------------------------------
