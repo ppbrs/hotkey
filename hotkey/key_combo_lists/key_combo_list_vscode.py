@@ -35,6 +35,14 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                     "CUSTOM: Select NEXT suggestion.",
                 ],
             ),
+            # alt + q
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="q"),
+                legend=[
+                    "CUSTOM: Duplicate selection.",
+                ],
+            ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
             # ---------------------------------------------------------------------
