@@ -141,7 +141,7 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 mode=Mode(ctrl=True),
                 key=Key(specific="s"),
                 legend=[
-                    "Save.",
+                    "Save. (Resume transmission if needed)",
                 ],
             ),
             # ctrl + u

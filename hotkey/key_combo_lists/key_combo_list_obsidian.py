@@ -151,20 +151,12 @@ class KeyComboListObsidian(KeyComboListInterface):  # pylint: disable=too-few-pu
             # ---------------------------------------------------------------------
             # shift + alt + ...
             # ---------------------------------------------------------------------
-            # shift + alt + D
-            KeyCombo(
-                mode=Mode(alt=True, shift=True),
-                key=Key(specific="d"),
-                legend=[
-                    "CUSTOM: Switch to dark mode",
-                ],
-            ),
             # shift + alt + L
             KeyCombo(
                 mode=Mode(alt=True, shift=True),
                 key=Key(specific="l"),
                 legend=[
-                    "CUSTOM: Switch to ligth mode",
+                    "CUSTOM: Toggle ligth-dark mode",
                 ],
             ),
             # ---------------------------------------------------------------------
