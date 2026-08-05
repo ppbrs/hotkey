@@ -8,6 +8,7 @@ from hotkey.mode import Mode
 # "noqa" in class's first line silences the error that I cannot explain:
 # Class cannot subclass "KeyComboListInterface" (has type "Any")  [misc] [mypy]
 
+
 class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-public-methods # noqa
     """Data class that holds specific hotkeys."""
 
@@ -168,6 +169,22 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                     "Linux: suspend current process and put it to background (then `fg`).",
                 ],
             ),
+            # ctrl + 0
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="0"),
+                legend=[
+                    "Zoom Reset.",
+                ],
+            ),
+            # # ctrl + -
+            # KeyCombo(
+            #     mode=Mode(ctrl=True),
+            #     key=Key(specific="-"),
+            #     legend=[
+            #         "Zoom Out.",
+            #     ],
+            # ),
             # ---------------------------------------------------------------------
             # shift + ...
             # ---------------------------------------------------------------------
@@ -204,6 +221,14 @@ class KeyComboListTerminal(KeyComboListInterface):  # pylint: disable=too-few-pu
                 key=Key(specific="v"),
                 legend=[
                     "Paste from clipboard.",
+                ],
+            ),
+            # ctrl + shift + =
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="="),
+                legend=[
+                    "Zoom In.",
                 ],
             ),
             # ctrl + shift + w

@@ -10,6 +10,7 @@ from hotkey.mode import Mode
 # "noqa" in class's first line silences the error that I cannot explain:
 # Class cannot subclass "KeyComboListInterface" (has type "Any")  [misc] [mypy]
 
+
 class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-public-methods # noqa
     """Data class that holds specific hotkeys."""
 
@@ -117,6 +118,14 @@ class KeyComboListUniversal(KeyComboListInterface):  # pylint: disable=too-few-p
                 key=Key(specific="i"),
                 legend=[
                     "Italicize.",
+                ],
+            ),
+            # ctrl + j
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="j"),
+                legend=[
+                    "Chrome: Open DOWNLOADS history.",
                 ],
             ),
             # ctrl + q
