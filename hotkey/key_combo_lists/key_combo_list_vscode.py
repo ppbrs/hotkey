@@ -1,4 +1,4 @@
-"""Configure the hotkeys that are specific to sublime-text."""
+"""Configure the hotkeys that are specific to Visual Studio Code editor."""
 
 from hotkey.key import Key
 from hotkey.key_combo import KeyCombo
@@ -35,12 +35,74 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                     "CUSTOM: Select NEXT suggestion.",
                 ],
             ),
+            # alt + b
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="b"),
+                legend=[
+                    "CUSTOM: Cancel the running build.",
+                ],
+            ),
+            # alt + c
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="c"),
+                legend=[
+                    "FIND and SEARCH: Match Case: Aa",
+                ],
+            ),
+            # alt + q
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="q"),
+                legend=[
+                    "CUSTOM: Duplicate the line or selection",
+                ],
+            ),
+            # alt + r
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="r"),
+                legend=[
+                    "FIND and SEARCH: Use Regular Expression: .*",
+                ],
+            ),
+            # alt + w
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="w"),
+                legend=[
+                    "FIND and SEARCH: Use Whole Word: [ab]",
+                ],
+            ),
+            # alt + z
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(specific="z"),
+                legend=[
+                    "Word Wrap.",
+                ],
+            ),
+            # alt + enter
+            KeyCombo(
+                mode=Mode(alt=True),
+                key=Key(enter=True),
+                legend=["FIND: Select all."],
+            ),
             # ---------------------------------------------------------------------
             # alt_gr + ...
             # ---------------------------------------------------------------------
             # ---------------------------------------------------------------------
             # standalone keys
             # ---------------------------------------------------------------------
+            # tab
+            KeyCombo(
+                mode=Mode(),
+                key=Key(tab=True),
+                legend=[
+                    "SUGGEST: Choose the highlighted variant.",
+                ],
+            ),
             # ---------------------------------------------------------------------
             # ctrl + ...
             # ---------------------------------------------------------------------
@@ -49,7 +111,7 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 mode=Mode(ctrl=True),
                 key=Key(specific="space"),
                 legend=[
-                    "Toggle suggestions and suggestion details.",
+                    "SUGGEST: Trigger.",
                 ],
             ),
             # ctrl + `
@@ -60,12 +122,52 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                     "Toggle the integrated Terminal.",
                 ],
             ),
+            # ctrl + /
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="/"),
+                legend=[
+                    "Comment/Uncomment current line.",
+                ],
+            ),
+            # ctrl + 0
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="0"),
+                legend=[
+                    "Focus on sidebar.",
+                ],
+            ),
             # ctrl + B
             KeyCombo(
                 mode=Mode(ctrl=True),
                 key=Key(specific="b"),
                 legend=[
                     "Toggle the sidebar.",
+                ],
+            ),
+            # ctrl + d
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="d"),
+                legend=[
+                    "Select next.",
+                ],
+            ),
+            # ctrl + g
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="g"),
+                legend=[
+                    "Go to line number ...",
+                ],
+            ),
+            # ctrl + p
+            KeyCombo(
+                mode=Mode(ctrl=True),
+                key=Key(specific="p"),
+                legend=[
+                    "Go to file ...",
                 ],
             ),
             # ctrl + T
@@ -79,9 +181,23 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             # ---------------------------------------------------------------------
             # shift + ...
             # ---------------------------------------------------------------------
+            # shift + enter
+            KeyCombo(
+                mode=Mode(shift=True),
+                key=Key(enter=True),
+                legend=["FIND: Previous Match."],
+            ),
             # ---------------------------------------------------------------------
             # ctrl + shift + ...
             # ---------------------------------------------------------------------
+            # ctrl + shift + b
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="b"),
+                legend=[
+                    "Select a build task to run",
+                ],
+            ),
             # ctrl + shift + d
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
@@ -106,6 +222,14 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                     "Format the file (ruff, rustfmt, ...)",
                 ],
             ),
+            # ctrl + shift + k
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="k"),
+                legend=[
+                    "Delete the line.",
+                ],
+            ),
             # ctrl + shift + L
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True),
@@ -128,6 +252,14 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
                 key=Key(specific="o"),
                 legend=[
                     "Select a symbol. File-scope.",
+                ],
+            ),
+            # ctrl + shift + p
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True),
+                key=Key(specific="p"),
+                legend=[
+                    "commands",
                 ],
             ),
             # ctrl + shift + y
@@ -165,10 +297,29 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             # ---------------------------------------------------------------------
             # shift + alt + ...
             # ---------------------------------------------------------------------
+            # ctrl + shift + alt + \
+            KeyCombo(
+                mode=Mode(ctrl=True, shift=True, alt=True),
+                key=Key(specific="\]"),
+                legend=[
+                    "CUSTOM: Select everything inside the brackets, braces,parentheses.",
+                ],
+            ),
+            # ---------------------------------------------------------------------
+            # shift + alt + ...
+            # ---------------------------------------------------------------------
             # shift + alt + tab
             # ---------------------------------------------------------------------
             # ctrl + alt + ...
             # ---------------------------------------------------------------------
+            # ctrl + alt + c
+            # KeyCombo(
+            #     mode=Mode(ctrl=True, alt=True),
+            #     key=Key(specific="c"),
+            #     legend=[
+            #         "Copy file path",
+            #     ],
+            # ),
             # ctrl + alt + i
             KeyCombo(
                 mode=Mode(ctrl=True, alt=True),
