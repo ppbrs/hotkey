@@ -300,7 +300,7 @@ class KeyComboListVscode(KeyComboListInterface):  # pylint: disable=too-few-publ
             # ctrl + shift + alt + \
             KeyCombo(
                 mode=Mode(ctrl=True, shift=True, alt=True),
-                key=Key(specific="\]"),
+                key=Key(specific="\\"),
                 legend=[
                     "CUSTOM: Select everything inside the brackets, braces,parentheses.",
                 ],
